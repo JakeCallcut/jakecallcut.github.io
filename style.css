@@ -1,8 +1,19 @@
 
-h1 {
-  font-family: sans-serif;
+body {
+  background-color: #2e2b36;
+  font-family: Lato, Helvetica;
 }
 
-p {
-  font-family: 'Lato';
+.maindesc{
+  text-align: center;
+  color: white;
+  font-family: Lato;
+}
+
+.maindesc p {
+  font-weight: 100;
+}
+
+h1 {
+  font-weight: 300;
 }
