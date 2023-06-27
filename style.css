@@ -2,12 +2,15 @@
 body {
   background-color: #2e2b36;
   font-family: Lato, Helvetica;
+  height: 100%;
+  overflow: hidden;
 }
 
 #maindesc {
   width: auto;
-  padding: 100px 0 0 0;
+  padding: 100px 0 0 100px;
   text-align: center;
+  float: left;
   color: white;
   font-family: Lato;
 }
@@ -17,9 +20,19 @@ body {
   font-size: 23px;
 }
 
+#cards{
+  float: right;
+  padding: 150px 125px 0 0;
+}
+
+#cards .card{
+  padding: 0 25px 0 25px;
+}
+
 h1 {
   font-weight: 300;
   font-size: 40px;
+  color: #6ca1d2;
 }
 
 #pfp {
@@ -29,4 +42,11 @@ h1 {
 
 #pin{
   height: 20px;
+}
+
+#nodes{
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  z-index: -5;
 }
