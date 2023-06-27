@@ -4,16 +4,29 @@ body {
   font-family: Lato, Helvetica;
 }
 
-.maindesc{
+#maindesc {
+  width: auto;
+  padding: 100px 0 0 0;
   text-align: center;
   color: white;
   font-family: Lato;
 }
 
-.maindesc p {
+#maindesc p {
   font-weight: 100;
+  font-size: 23px;
 }
 
 h1 {
   font-weight: 300;
+  font-size: 40px;
+}
+
+#pfp {
+  border-radius: 50%;
+  width: 300px;
+}
+
+#pin{
+  height: 20px;
 }
