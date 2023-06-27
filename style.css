@@ -1,0 +1,14 @@
+@font-face {
+  font-family: 'lato';
+  src: url('lato/Lato-Thin.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-family: lato;
+}
+
+p {
+  font-family: lato;
+}
