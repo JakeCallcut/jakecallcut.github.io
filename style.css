@@ -32,19 +32,35 @@ body {
 #cards{
   float: right;
   padding: 15% 14% 0 0;
-}
-
-#cards .card{
-  padding: 0 25px 0 25px;
+  display: inline-block;
 }
 
 #cards p{
   font-family: Lato, Helvetica;
   font-weight: 300;
-  font-size: 23px;
+  font-size: 18px;
   color: white;
   text-align: center;
-  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+
+#contact:hover > p{
+  opacity: 1;
+}
+
+#projects:hover > p{
+  opacity: 1;
+}
+
+#skills:hover > p{
+  opacity: 1;
+}
+
+.card{
+  text-align: center;
+  padding: 0 15px 0 15px;
+  float: left;
 }
 
 h1 {
