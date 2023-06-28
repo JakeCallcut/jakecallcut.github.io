@@ -13,16 +13,20 @@ body {
 
 #maindesc {
   width: auto;
-  padding: 10% 0 0 10%;
+  padding: 7% 0 0 7%;
   text-align: center;
   float: left;
   color: white;
-  font-family: Lato;
+  font-family: Lato, Helvetica;
 }
 
 #maindesc p {
   font-weight: 100;
   font-size: 23px;
+}
+
+#maindesc .location{
+  color: var(--accent);
 }
 
 #cards{
@@ -34,6 +38,15 @@ body {
   padding: 0 25px 0 25px;
 }
 
+#cards p{
+  font-family: Lato, Helvetica;
+  font-weight: 300;
+  font-size: 23px;
+  color: white;
+  text-align: center;
+  visibility: hidden;
+}
+
 h1 {
   font-weight: 300;
   font-size: 40px;
@@ -42,7 +55,7 @@ h1 {
 
 #pfp {
   border-radius: 50%;
-  width: 300px;
+  width: 55%;
 }
 
 #pin{
@@ -50,6 +63,7 @@ h1 {
 }
 
 #nodes{
+  height: 50%;
   position: absolute;
   right: 0px;
   bottom: 0px;
