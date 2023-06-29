@@ -1,4 +1,4 @@
-
+/*MAIN PAGE*/
 :root{
   --accent: #6ca1d2;
   --background: #2e2b36;
@@ -69,6 +69,12 @@ h1 {
   color: var(--accent);
 }
 
+h2 {
+  font-weight: 300;
+  font-size: 30px;
+  color: var(--accent);
+}
+
 #pfp {
   border-radius: 50%;
   width: 55%;
@@ -84,4 +90,31 @@ h1 {
   right: 0px;
   bottom: 0px;
   z-index: -5;
+}
+
+/*CONTACT PAGE SPECIFIC*/
+
+#contactcard{
+  float: right;
+  padding: 8% 20% 0 0;
+  display: inline-block;
+  text-align: center;
+}
+
+#contactcard li{
+  text-align: left;
+  padding: 4px 0 4px 0;
+  color: var(--accent);
+}
+
+#contactcard a{
+  text-decoration: none;
+  color: white;
+  font-family: Lato, Helvetica;
+  font-size: 20px;
+  font-weight: 300;
+}
+
+#contactcard a:hover{
+  color: var(--accent);
 }
