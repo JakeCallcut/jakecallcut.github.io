@@ -12,9 +12,10 @@
 /*HOMEPAGE*/
 body{
     background-color: var(--background);
-    font-family: Lato;
+    font-family: Montserrat;
     display: flex;
     justify-content: center;
+    text-align: center;
 }
 
 nav{
@@ -22,7 +23,7 @@ nav{
   display: flex;
   justify-content: space-between;
   width: 1000px;
-  margin: 20px 0 0 0;
+  margin: 30px 0 0 0;
   overflow: auto;
 }
 
@@ -36,10 +37,34 @@ nav img{
 }
 
 #pfp {margin-right: auto;}
-#github {margin-left: auto;}
+#github {margin-left: auto; padding-right: 20px}
 #linkedin {justify-content: flex-end;}
 
 .circleImage {
+  width: 100px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.nameCard{
+  margin: 120px;
+}
+
+#hi{
+  line-height: 0;
+  font-family: 'Fira Mono';
+  color: darkGray;
+}
+
+#Jake{
+  text-align:center;
+  line-height: 0;
+  font-size: 5rem;
+  color: var(--accent);
+}
+
+#Callcut{
+  line-height: 0;
+  font-size: 5rem;
+  color: darkGray;
 }
