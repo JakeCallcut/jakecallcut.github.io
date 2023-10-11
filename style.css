@@ -1,0 +1,45 @@
+:root {
+  --accent: #6CA1D2;
+  --background: #3B4856;
+  --dustyPink: #CD88A4;
+}
+
+@font-face {
+  font-family: 'Lato';
+  src: url('path-to-your-font.woff') format('woff');
+}
+
+/*HOMEPAGE*/
+body{
+    background-color: var(--background);
+    font-family: Lato;
+    display: flex;
+    justify-content: center;
+}
+
+nav{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  width: 1000px;
+  margin: 20px 0 0 0;
+  overflow: auto;
+}
+
+nav li{
+  display: inline;
+}
+
+nav img{
+  width: 75px;
+  height: auto;
+}
+
+#pfp {margin-right: auto;}
+#github {margin-left: auto;}
+#linkedin {justify-content: flex-end;}
+
+.circleImage {
+  border-radius: 50%;
+  object-fit: cover;
+}
