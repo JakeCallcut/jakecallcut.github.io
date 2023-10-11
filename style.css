@@ -68,3 +68,12 @@ nav img{
   font-size: 5rem;
   color: darkGray;
 }
+
+.bottomBar{
+  font-family: 'Fira Mono';
+  color: darkGray;
+}
+
+.bottomBar ul{
+  list-style: none;
+}
