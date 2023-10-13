@@ -72,8 +72,31 @@ nav img{
 .bottomBar{
   font-family: 'Fira Mono';
   color: darkGray;
+  padding-right: 10px;
 }
 
 .bottomBar ul{
   list-style: none;
+}
+
+.bottomBar li{
+  margin-top: 20px;
+  margin-left: 25px;
+  margin-right: 25px;
+  display: inline;
+}
+
+.bottomBar a{
+  text-decoration: none;
+  color: darkGray;
+}
+
+.dot{
+  height: 7px;
+  width: auto;
+  padding-bottom: 2px;
+}
+
+.secondList {
+  margin-top: 50px:
 }
