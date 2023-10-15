@@ -14,6 +14,8 @@ body{
     background-color: var(--background);
     font-family: Montserrat;
     display: flex;
+    flex-direction: column; /* Make it a column layout */
+    align-items: center;
     justify-content: center;
     text-align: center;
 }
@@ -121,13 +123,32 @@ nav img{
 /*ABOUT PAGE*/
 
 .aboutCard{
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .pfpAbout{
-  
+  height: 250px;
 }
 
 .description{
+  width: 50%;
+  color: darkGray;
+  font-family: Montserrat;
+}
 
+.bullets{
+  padding-top: 30px;
+  font-family: "Fira Mono";
+}
+
+.bullets span{
+  color: var(--accent);
+  display: inline-block;
+}
+
+.bullets p{
+  color: darkGray;
+  display: inline-block;
 }
