@@ -40,8 +40,24 @@ nav img{
 #github {margin-left: auto; padding-right: 20px}
 #linkedin {justify-content: flex-end;}
 
-.circleImage {
+#pfp img{
   width: 100px;
+}
+
+#pfp a{
+  font-family: Montserrat;
+  font-size: 80px;
+  color: darkGray;
+  text-decoration: none;
+}
+
+#pfp a::first-letter{
+  color: var(--accent);
+}
+
+
+
+.circleImage {
   border-radius: 50%;
   object-fit: cover;
 }
@@ -99,4 +115,19 @@ nav img{
 
 .secondList {
   margin-top: 50px:
+}
+
+
+/*ABOUT PAGE*/
+
+.aboutCard{
+
+}
+
+.pfpAbout{
+  
+}
+
+.description{
+
 }
