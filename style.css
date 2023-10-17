@@ -14,16 +14,22 @@ body{
     background-color: var(--background);
     font-family: Montserrat;
     display: flex;
-    flex-direction: column; /* Make it a column layout */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 nav{
   list-style: none;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   width: 1000px;
   margin: 30px 0 0 0;
   overflow: auto;
@@ -53,11 +59,9 @@ nav img{
   text-decoration: none;
 }
 
-#pfp a::first-letter{
-  color: var(--accent);
+.firstLetter{
+
 }
-
-
 
 .circleImage {
   border-radius: 50%;
@@ -123,6 +127,7 @@ nav img{
 /*ABOUT PAGE*/
 
 .aboutCard{
+  padding-top: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,7 +138,7 @@ nav img{
 }
 
 .description{
-  width: 50%;
+  width: 30%;
   color: darkGray;
   font-family: Montserrat;
 }
@@ -151,4 +156,19 @@ nav img{
 .bullets p{
   color: darkGray;
   display: inline-block;
+}
+
+/*CONTACT PAGE*/
+.contacts{
+  width: 50%;
+  padding-top: 70px;
+}
+
+.githubCard{
+  background-color: black;
+}
+
+#github{
+  height: 30px;
+  width: auto;
 }
