@@ -5,10 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     dots[i].style.display = 'none';
   }
 
+  const ghText = document.getElementById('githubText');
+  const liText = document.getElementById('linkedinText');
+  const emText = document.getElementById('emailText');
+
   const about = document.getElementById('about');
   const contact = document.getElementById('contact');
   const work = document.getElementById('work');
-  
+
   about.addEventListener('mouseover', function(){
       dots[0].style.display = 'inline';
   });
@@ -32,5 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
   contact.addEventListener('mouseout', function(){
       dots[2].style.display = 'none';
   });
+
+
+
 
 });

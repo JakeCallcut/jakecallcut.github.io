@@ -39,6 +39,12 @@ nav li{
   display: inline;
 }
 
+nav li p{
+  color: var(--accent);
+  font-size: 30px;
+  font-weight: light;
+}
+
 nav img{
   width: 75px;
   height: auto;
@@ -60,7 +66,7 @@ nav img{
 }
 
 .firstLetter{
-
+  color: var(--accent);
 }
 
 .circleImage {
@@ -120,7 +126,7 @@ nav img{
 }
 
 .secondList {
-  margin-top: 50px:
+  margin-top: 50px;
 }
 
 
@@ -138,37 +144,57 @@ nav img{
 }
 
 .description{
-  width: 30%;
   color: darkGray;
   font-family: Montserrat;
+  width: 60%;
+  background-color: var(--background);
+  font-family: "Fira Mono";
+  padding-bottom: 12px;
+  margin-top: 30px;
+  font-size: 25px;
 }
 
 .bullets{
-  padding-top: 30px;
+  text-align: left;
+  padding: 30px 0 0 20px;
   font-family: "Fira Mono";
 }
 
 .bullets span{
   color: var(--accent);
-  display: inline-block;
+  display: inline;
+  font-size: 25px;
+  font-family: Montserrat;
 }
 
 .bullets p{
   color: darkGray;
-  display: inline-block;
+  display: inline;
 }
+
+#flash{
+  font-family: Montserrat;
+  font-weight: 200;
+  font-size: 30px;
+}
+
 
 /*CONTACT PAGE*/
-.contacts{
+.contactCard{
+  color: darkGray;
   width: 50%;
-  padding-top: 70px;
+  padding: 10% 0 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
 }
 
-.githubCard{
-  background-color: black;
+.contactCard img{
+  width: 96px;
 }
 
-#github{
-  height: 30px;
-  width: auto;
+#githubCard, #linkedinCard, #emailCard{
+  flex: 1;
+  font-family: "Fira Mono";
+  width: 300px;
 }
