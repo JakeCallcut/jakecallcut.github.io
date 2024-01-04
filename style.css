@@ -9,6 +9,13 @@
   src: url('path-to-your-font.woff') format('woff');
 }
 
+.unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 /*HOMEPAGE*/
 body{
     background-color: var(--background);
@@ -189,6 +196,11 @@ nav img{
   margin: 0 auto;
 }
 
+.contactCard a{
+  text-decoration: none;
+  color: darkGray;
+}
+
 .contactCard img{
   width: 96px;
 }
@@ -197,4 +209,21 @@ nav img{
   flex: 1;
   font-family: "Fira Mono";
   width: 300px;
+  cursor: pointer;
+}
+
+
+/*PROJECTS PAGE*/
+.projects span{
+  color: darkGray;
+  font-size: 30px;
+}
+
+.projects a{
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.projectCard{
+  text-align: center;
 }
