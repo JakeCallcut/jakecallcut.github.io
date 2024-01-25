@@ -5,6 +5,23 @@ document.addEventListener('DOMContentLoaded', function() {
     dots[i].style.display = 'none';
   }
 
+
+  window.onpageshow = function(event) {
+  if (event.persisted) {
+    dots[0].style.display = 'none';
+    dots[1].style.display = 'none';
+    dots[2].style.display = 'none';
+  } else {
+    dots[0].style.display = 'none';
+    dots[1].style.display = 'none';
+    dots[2].style.display = 'none';
+  }
+};
+
+    dots[0].style.display = 'none';
+    dots[1].style.display = 'none';
+    dots[2].style.display = 'none';
+
   const about = document.getElementById('about');
   const contact = document.getElementById('contact');
   const work = document.getElementById('work');
