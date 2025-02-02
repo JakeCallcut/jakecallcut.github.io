@@ -15,7 +15,7 @@ class MainPage extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/bg_gradient_single.png'),
+            image: AssetImage('assets/images/bg_gradient_single.png'),
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),
@@ -55,7 +55,7 @@ class MainPage extends StatelessWidget {
             Positioned.fill(
               child: Center(
                 child: Image.asset(
-                  'images/statue.png',
+                  'assets/images/statue.png',
                   opacity: const AlwaysStoppedAnimation<double>(0.13),
                   height: 600,
                   fit: BoxFit.contain,
@@ -132,7 +132,7 @@ class MainPage extends StatelessWidget {
         Row(
           children: [
             Image.asset(
-              "icons/location.png",
+              "assets/icons/location.png",
               width: 30,
               height: 30,
             ),
@@ -189,7 +189,7 @@ class MainPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Image.asset(
-                  "icons/location.png",
+                  "assets/icons/location.png",
                   width: 24,
                   height: 24,
                 ),
