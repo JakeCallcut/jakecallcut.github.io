@@ -4,6 +4,8 @@ import 'package:portfolio_frontend/features/main_page/widget/nav_bar.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({super.key});
+  
+  final double _mobileBreakpoint = 900.0;
 
   @override
   Widget build(BuildContext context) {
@@ -20,49 +22,18 @@ class MainPage extends StatelessWidget {
         ),
         child: Column(
           children: [
-            // NavBar at the top
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
               child: NavBar(),
             ),
-            // Main content
             Expanded(
-              child: Center(
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    SizedBox(
-                      height: 200,
-                      width: 300,
-                      child: Stack(
-                        children: [
-                          Positioned(child: Text("Jake", 
-                            style: TextStyle(fontSize: 90, 
-                            color: MainTheme.lightBeige, 
-                            fontFamily: 'Gruppo'))),
-                          Positioned(
-                            top: 80,
-                            child: Text("Callcut", style: TextStyle(fontSize: 90, color: MainTheme.lightBeige, fontFamily: 'Gruppo'))),
-                        ],
-                      ),
-                    ),
-                    Image.asset('images/statue.png', opacity: const AlwaysStoppedAnimation<double>(0.13), height: 600,),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text('Software Developer\n& UX Designer', style: TextStyle(fontSize: 40, color: MainTheme.lightBeige, fontFamily: 'Gruppo')),
-                        Row(
-                          children: [
-                            Image.asset("icons/location.png", width: 30, height: 30,),
-                            Text('Edinburgh, Scotland', style: TextStyle(fontSize: 30, color: MainTheme.lightBeige, fontFamily: 'Gruppo')),                          
-                          ],
-                        )
-                      ],
-                    )
-                  ],
-                )
+              child: LayoutBuilder(
+                builder: (context, constraints) {
+                  if (constraints.maxWidth > _mobileBreakpoint) {
+                    return _buildDesktopLayout();
+                  }
+                  return _buildMobileLayout();
+                },
               ),
             ),
           ],
@@ -71,4 +42,171 @@ class MainPage extends StatelessWidget {
     );
   }
 
+  Widget _buildDesktopLayout() {
+    return LayoutBuilder(
+      builder: (context, constraints) {
+        final screenWidth = constraints.maxWidth;
+        
+        return Stack(
+          fit: StackFit.expand,
+          alignment: Alignment.center,
+          children: [
+            // Centered statue
+            Positioned.fill(
+              child: Center(
+                child: Image.asset(
+                  'images/statue.png',
+                  opacity: const AlwaysStoppedAnimation<double>(0.13),
+                  height: 600,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
+            // Content overlay
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: screenWidth * 0.1),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  _buildNameSection(),
+                  _buildInfoSection(),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _buildNameSection() {
+    return SizedBox(
+      height: 200,
+      width: 300,
+      child: Stack(
+        children: [
+          const Positioned(
+            top: 0,
+            left: 0,
+            child: Text(
+              "Jake",
+              style: TextStyle(
+                fontSize: 90,
+                color: MainTheme.lightBeige,
+                fontFamily: 'Gruppo'
+              )
+            ),
+          ),
+          const Positioned(
+            top: 80,
+            left: 0,
+            child: Text(
+              "Callcut",
+              style: TextStyle(
+                fontSize: 90,
+                color: MainTheme.lightBeige,
+                fontFamily: 'Gruppo'
+              )
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildInfoSection() {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const Text(
+          'Software Developer\n& UX Designer',
+          style: TextStyle(
+            fontSize: 40,
+            color: MainTheme.lightBeige,
+            fontFamily: 'Gruppo'
+          )
+        ),
+        const SizedBox(height: 20),
+        Row(
+          children: [
+            Image.asset(
+              "icons/location.png",
+              width: 30,
+              height: 30,
+            ),
+            const SizedBox(width: 10),
+            const Text(
+              'Edinburgh, Scotland',
+              style: TextStyle(
+                fontSize: 30,
+                color: MainTheme.lightBeige,
+                fontFamily: 'Gruppo'
+              )
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget _buildMobileLayout() {
+    return Center(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Jake",
+              style: TextStyle(
+                fontSize: 70,
+                color: MainTheme.lightBeige,
+                fontFamily: 'Gruppo'
+              )
+            ),
+            Text(
+              "Callcut",
+              style: TextStyle(
+                fontSize: 70,
+                color: MainTheme.lightBeige,
+                fontFamily: 'Gruppo'
+              )
+            ),
+            SizedBox(height: 40),
+            Text(
+              'Software Developer\n& UX Designer',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 32,
+                color: MainTheme.lightBeige,
+                fontFamily: 'Gruppo'
+              )
+            ),
+            SizedBox(height: 20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  "icons/location.png",
+                  width: 24,
+                  height: 24,
+                ),
+                SizedBox(width: 8),
+                Text(
+                  'Edinburgh, Scotland',
+                  style: TextStyle(
+                    fontSize: 24,
+                    color: MainTheme.lightBeige,
+                    fontFamily: 'Gruppo'
+                  )
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
 }
