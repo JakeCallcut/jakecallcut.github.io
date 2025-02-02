@@ -1,8 +1,8 @@
 {
     "name": "Jake Callcut | Software Developer & UX Designer",
     "short_name": "Jake Callcut",
-    "start_url": "/jakecallcut.github.io/",
-    "scope": "/jakecallcut.github.io/",
+    "start_url": "/",
+    "scope": "/",
     "display": "standalone",
     "display_override": ["window-controls-overlay"],
     "background_color": "#1D4B2E",
