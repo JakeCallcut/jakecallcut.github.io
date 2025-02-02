@@ -15,7 +15,7 @@ class MainPage extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('images/bg_gradient.png'),
+            image: AssetImage('images/bg_gradient_single.png'),
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),
