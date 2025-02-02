@@ -1,11 +1,11 @@
 {
-    "name": "portfolio_frontend",
-    "short_name": "portfolio_frontend",
+    "name": "Jake Callcut",
+    "short_name": "Jake Callcut",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Software Developer Portfolio",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
