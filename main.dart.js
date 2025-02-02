@@ -59030,17 +59030,17 @@ return B.c.aL(r,s)},
 $S:388}
 A.B1.prototype={
 T(a){var s=null
-return new A.tD(A.z8(A.z3(A.b([new A.el(new A.b8(32,16,32,16),new A.Bl(A.h9(s,s,B.ax,s,s,s,s,s,"Gruppo",s,s,20,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s),s),new A.zX(1,B.j9,new A.n6(new A.R2(this),s),s)],t.W),B.ag,B.b2),new A.ex(s,new A.mH(new A.mo("images/bg_gradient_single.png",s,s),B.vl,B.v2),s,s,s,s,B.aZ),1/0,s,s,1/0),s)},
+return new A.tD(A.z8(A.z3(A.b([new A.el(new A.b8(32,16,32,16),new A.Bl(A.h9(s,s,B.ax,s,s,s,s,s,"Gruppo",s,s,20,s,s,s,s,s,!0,s,s,s,s,s,s,s,s),s),s),new A.zX(1,B.j9,new A.n6(new A.R2(this),s),s)],t.W),B.ag,B.b2),new A.ex(s,new A.mH(new A.mo("assets/images/bg_gradient_single.png",s,s),B.vl,B.v2),s,s,s,s,B.aZ),1/0,s,s,1/0),s)},
 Pf(){return new A.n6(new A.R1(this),null)}}
 A.R2.prototype={
 $2(a,b){var s,r=null,q="Gruppo"
 if(b.b>900)return this.a.Pf()
 s=t.W
-return A.yF(new A.el(B.y8,A.z3(A.b([A.h8("Jake",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,70,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r),A.h8("Callcut",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,70,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r),A.u4(r,40,r),A.h8("Software Developer\n& UX Designer",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,32,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),B.ep),A.u4(r,20,r),A.Cs(A.b([A.a6z("icons/location.png",r,24,r,24),A.u4(r,r,8),A.h8("Edinburgh, Scotland",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,24,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r)],s),B.ag,B.dW,B.bC)],s),B.ag,B.dW),r),r,r)},
+return A.yF(new A.el(B.y8,A.z3(A.b([A.h8("Jake",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,70,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r),A.h8("Callcut",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,70,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r),A.u4(r,40,r),A.h8("Software Developer\n& UX Designer",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,32,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),B.ep),A.u4(r,20,r),A.Cs(A.b([A.a6z("assets/icons/location.png",r,24,r,24),A.u4(r,r,8),A.h8("Edinburgh, Scotland",A.h9(r,r,B.ax,r,r,r,r,r,q,r,r,24,r,r,r,r,r,!0,r,r,r,r,r,r,r,r),r)],s),B.ag,B.dW,B.bC)],s),B.ag,B.dW),r),r,r)},
 $S:143}
 A.R1.prototype={
 $2(a,b){var s=null,r=b.b*0.1,q=t.W
-return A.Dd(B.av,A.b([A.abj(0,A.yF(A.a6z("images/statue.png",B.vk,600,B.v4,s),s,s)),new A.el(new A.b8(r,0,r,0),A.Cs(A.b([A.u4(A.Dd(B.eK,A.b([B.E3,B.E4],q),B.hy),200,300),A.z3(A.b([B.Kk,B.Gh,A.Cs(A.b([A.a6z("icons/location.png",s,30,s,30),B.Gg,B.Kj],q),B.ag,B.b2,B.bC)],q),B.bo,B.dW)],q),B.ag,B.fN,B.bC),s)],q),B.Gq)},
+return A.Dd(B.av,A.b([A.abj(0,A.yF(A.a6z("assets/images/statue.png",B.vk,600,B.v4,s),s,s)),new A.el(new A.b8(r,0,r,0),A.Cs(A.b([A.u4(A.Dd(B.eK,A.b([B.E3,B.E4],q),B.hy),200,300),A.z3(A.b([B.Kk,B.Gh,A.Cs(A.b([A.a6z("assets/icons/location.png",s,30,s,30),B.Gg,B.Kj],q),B.ag,B.b2,B.bC)],q),B.bo,B.dW)],q),B.ag,B.fN,B.bC),s)],q),B.Gq)},
 $S:390}
 A.Bl.prototype={
 T(a){return new A.n6(new A.Ui(this),null)},
