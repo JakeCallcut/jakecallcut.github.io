@@ -22,7 +22,7 @@ class MainPage extends StatelessWidget {
           children: [
             // NavBar at the top
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 10.0),
+              padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
               child: NavBar(),
             ),
             // Main content

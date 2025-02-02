@@ -1,38 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <!--
-    If you are serving your web app in a path other than the root, change the
-    href value below to reflect the base path you are serving from.
-
-    The path provided below has to start and end with a slash "/" in order for
-    it to work correctly.
-
-    For more details:
-    * https://developer.mozilla.org/en-US/docs/Web/HTML/Element/base
-
-    This is a placeholder for base href that will be replaced by the value of
-    the `--base-href` argument provided to `flutter build`.
-  -->
-  <base href="$FLUTTER_BASE_HREF">
+  <base href="/jakecallcut.github.io/">
 
   <meta charset="UTF-8">
   <meta content="IE=Edge" http-equiv="X-UA-Compatible">
-  <meta name="description" content="A new Flutter project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- iOS meta tags & icons -->
-  <meta name="mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="apple-mobile-web-app-title" content="portfolio_frontend">
+  <meta name="description" content="Portfolio website for Edinburgh-based Jake Callcut, a Software Developer and UX Designer. Showcasing projects, skills, and experience.">
+  <meta name="keywords" content="Jake Callcut, Software Developer, UX Designer, Edinburgh, Scotland, UK, Frontend, Backend, Web Development, Mobile Apps, Glasgow, London, Portfolio">
+  <meta name="author" content="Jake Callcut">
+
+  <meta property="og:title" content="Jake Callcut | Software Developer & UX Designer">
+  <meta property="og:description" content="Portfolio website for Edinburgh-based Jake Callcut, showcasing projects and experience.">
+  <meta property="og:image" content="https://yourdomain.com/social-preview.jpg">
+  <meta property="og:url" content="https://yourdomain.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jake Callcut | Software Developer & UX Designer">
+  <meta name="twitter:description" content="Portfolio website for Edinburgh-based Jake Callcut, showcasing projects and experience.">
+  <meta name="twitter:image" content="https://yourdomain.com/social-preview.jpg">
+
+  <meta name="theme-color" content="#2196F3">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Jake Callcut Portfolio">
+
   <link rel="apple-touch-icon" href="icons/Icon-192.png">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png"/>
-
-  <title>portfolio_frontend</title>
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="manifest" href="manifest.json">
+
+  <title>Jake Callcut | Software Developer & UX Designer</title>
 </head>
 <body>
-  <script src="flutter_bootstrap.js" async></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      let script = document.createElement("script");
+      script.src = "flutter_bootstrap.js";
+      script.defer = true;
+      document.body.appendChild(script);
+    });
+  </script>
 </body>
 </html>

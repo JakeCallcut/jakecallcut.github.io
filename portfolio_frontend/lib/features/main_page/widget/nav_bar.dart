@@ -46,8 +46,9 @@ class NavBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 8.0),
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.end,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                Text('JC', style: _menuStyle),
                 PopupMenuButton<String>(
                   icon: Icon(Icons.menu, color: MainTheme.lightBeige),
                   color: Colors.black87,
@@ -61,7 +62,7 @@ class NavBar extends StatelessWidget {
                     }).toList();
                   },
                   onSelected: (String value) {
-
+                    // Handle menu selection
                   },
                 ),
               ],
