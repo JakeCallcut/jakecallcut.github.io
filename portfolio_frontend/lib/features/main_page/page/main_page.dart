@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_frontend/core/themes/main_theme.dart';
+import 'package:portfolio_frontend/features/main_page/widget/about_page.dart';
 import 'package:portfolio_frontend/features/main_page/widget/nav_bar.dart';
 
-class MainPage extends StatelessWidget {
+class MainPage extends StatefulWidget {
   const MainPage({super.key});
-  
+
+  @override
+  State<MainPage> createState() => _MainPageState();
+}
+
+class _MainPageState extends State<MainPage> {
+  final PageController _pageController = PageController();
   final double _mobileBreakpoint = 900.0;
+
+  @override
+  void dispose() {
+    _pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +28,7 @@ class MainPage extends StatelessWidget {
         height: double.infinity,
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: AssetImage('assets/images/bg_gradient_single.png'),
+            image: AssetImage('assets/images/bg_gradient.png'),
             fit: BoxFit.cover,
             alignment: Alignment.topCenter,
           ),
@@ -24,15 +37,42 @@ class MainPage extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 32.0, vertical: 16.0),
-              child: NavBar(),
+              child: NavBar(
+                onHomePressed: () {
+                  _pageController.animateToPage(
+                    0,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+                onAboutPressed: () {
+                  _pageController.animateToPage(
+                    1,
+                    duration: Duration(milliseconds: 500),
+                    curve: Curves.easeInOut,
+                  );
+                },
+              ),
             ),
             Expanded(
-              child: LayoutBuilder(
-                builder: (context, constraints) {
-                  if (constraints.maxWidth > _mobileBreakpoint) {
-                    return _buildDesktopLayout();
+              child: PageView.builder(
+                controller: _pageController,
+                scrollDirection: Axis.vertical,
+                physics: const PageScrollPhysics(),
+                itemCount: 2,
+                itemBuilder: (context, index) {
+                  if (index == 0) {
+                    return LayoutBuilder(
+                      builder: (context, constraints) {
+                        if (constraints.maxWidth > _mobileBreakpoint) {
+                          return _buildDesktopLayout();
+                        }
+                        return _buildMobileLayout();
+                      },
+                    );
+                  } else {
+                    return AboutPage();
                   }
-                  return _buildMobileLayout();
                 },
               ),
             ),
