@@ -31,7 +31,7 @@ jobs:
 
       - name: Upload artifact
         # use the newer Pages artifact action (avoids older artifact action versions)
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v2
         with:
           path: ./dist
 
