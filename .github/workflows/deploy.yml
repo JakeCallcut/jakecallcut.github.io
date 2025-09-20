@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 jobs:
-  build-deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -37,25 +37,15 @@ jobs:
       - name: Debug - show run info & dist files
         run: |
           echo "GITHUB_RUN_ID=${{ github.run_id }}"
-          echo "GITHUB_RUN_NUMBER=${{ github.run_number }}"
-          echo "GITHUB_RUN_ATTEMPT=${{ github.run_attempt }}"
           ls -la ./dist || true
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v3
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
-
-  deploy:
-    needs: build-deploy
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-
-    steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v3
 
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v1
