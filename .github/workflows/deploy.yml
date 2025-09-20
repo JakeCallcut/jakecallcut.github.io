@@ -4,6 +4,11 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
@@ -26,11 +31,17 @@ jobs:
 
       - name: Build
         env:
-          VITE_BASE: /jakecallcut.github.io/
+          VITE_BASE: '/'
         run: npm run build
 
+      - name: Debug: show run info & dist files
+        run: |
+          echo "GITHUB_RUN_ID=${{ github.run_id }}"
+          echo "GITHUB_RUN_NUMBER=${{ github.run_number }}"
+          echo "GITHUB_RUN_ATTEMPT=${{ github.run_attempt }}"
+          ls -la ./dist || true
+
       - name: Upload artifact
-        # use the newer Pages artifact action (avoids older artifact action versions)
         uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
