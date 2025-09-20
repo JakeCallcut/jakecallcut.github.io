@@ -1,0 +1,68 @@
+{
+  "hero": {
+    "name": "Jake Callcut",
+    "title": "Designer & Developer",
+    "tagline": "Building thoughtful digital products with equal parts design and engineering.",
+    "cta": "Get in touch",
+    "location": "Edinburgh, Scotland",
+    "portrait": "/portrait.jpg"
+  },
+  "social": {
+    "github": "https://github.com/JakeCallcut",
+    "linkedin": "https://www.linkedin.com/in/j-callcut",
+    "email": "hello@jakecallcut.dev",
+    "website": "https://jakecallcut.dev"
+  },
+  "about": {
+    "bio": "I’m a software engineer with a passion for blending design and technology. With experience spanning mobile apps, embedded systems, and full-stack development, I enjoy solving complex problems and delivering polished, human-centered solutions. Outside of work, I’m always learning new tools and exploring how technology can make everyday life a little easier.",
+    "skills": ["Swift", "Flutter", "Java", "Python", "Ada/SPARK"],
+    "toolbox": ["VS Code", "Xcode", "Figma", "Git", "Docker"]
+  },
+  "experience": [
+    {
+      "company": "Squircle",
+      "role": "Developer",
+      "period": "2025 — Present",
+      "location": "Glasgow, Scotland",
+      "bullets": [
+        "Collaborated with a cross-functional team to design and deliver a next-generation NFC product.",
+        "Introduced modern DevOps workflows that reduced release friction and improved reliability."
+      ]
+    },
+    {
+      "company": "GI Healthcare Industries Limited",
+      "role": "Software Engineer",
+      "period": "2024 — Present",
+      "location": "Edinburgh, Scotland",
+      "bullets": [
+        "Developed software to support healthcare technology used in clinical environments.",
+        "Worked closely with engineers and medical staff to ensure safety-critical compliance."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "University": "Heriot-Watt University",
+      "Programme": "MEng Software Engineering",
+      "period": "2022 — 2027",
+      "location": "Edinburgh, Scotland"
+    }
+  ],
+  "projects": [
+    {
+      "name": "Lumina",
+      "description": "A smart lighting system integrating IoT hardware with a mobile app. Lumina enables users to control and automate lighting through a sleek Flutter interface while syncing with Raspberry Pi-powered devices in real time.",
+      "tech": ["Flutter", "Firebase", "Socket.IO", "Raspberry Pi"],
+      "links": {
+        "demo": "https://demo.url",
+        "source": "https://github.com/JakeCallcut/Lumina"
+      },
+      "image": "/project-one.png",
+      "featured": true
+    }
+  ],
+  "contact": {
+    "email": "contact@jakecallcut.dev",
+    "note": "I'm always open to discussing new opportunities, collaborations, or side projects. Drop me a message and let's chat!"
+  }
+}

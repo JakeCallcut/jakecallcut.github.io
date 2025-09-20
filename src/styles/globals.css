@@ -1,0 +1,50 @@
+@import "tailwindcss";
+@config "../../tailwind.config.ts";
+
+:root {
+  /* light theme */
+  --background: #f3e3c3; /* sand.light */
+  --foreground: #23241f; /* sand.dark */
+
+  --card: #f6d1a0;
+  --card-foreground: #23241f;
+
+  --muted: #dcc7a0;
+  --muted-foreground: #23241f;
+
+  --border: #e3cba7;
+  --input: #e3cba7;
+  --ring: #23241f;
+
+  --primary: #23241f;
+  --primary-foreground: #f3e3c3;
+
+  --secondary: #dcc7a0;
+  --secondary-foreground: #23241f;
+}
+
+.dark {
+  /* dark theme */
+  --background: #23241f;
+  --foreground: #f3e3c3;
+
+  --card: #2b2c27;
+  --card-foreground: #f3e3c3;
+
+  --muted: #3a3b35;
+  --muted-foreground: #e8dcc4;
+
+  --border: #3a3b35;
+  --input: #3a3b35;
+  --ring: #f3e3c3;
+
+  --primary: #f3e3c3;
+  --primary-foreground: #23241f;
+
+  --secondary: #2b2c27;
+  --secondary-foreground: #f3e3c3;
+}
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://jakecallcut.github.io/jakecallcut.github.io/sitemap.xml
