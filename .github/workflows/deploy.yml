@@ -42,9 +42,25 @@ jobs:
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v3
 
+      - name: Decide publish token
+        id: choose-token
+        run: |
+          if [ -n "${{ secrets.GH_PAGES_PAT }}" ]; then
+            echo "using=personal_token" >> $GITHUB_OUTPUT
+          else
+            echo "using=github_token" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Show chosen token (debug)
+        run: |
+          echo "Publish token method: ${{ steps.choose-token.outputs.using }}"
+
       - name: Publish to gh-pages branch (fallback)
         uses: peaceiris/actions-gh-pages@v4
         with:
+          # Prefer a user-created PAT stored in GH_PAGES_PAT (recommended if GITHUB_TOKEN push is denied)
+          personal_token: ${{ secrets.GH_PAGES_PAT }}
+          # GITHUB_TOKEN will be used by the action if personal_token is empty, but it must have 'contents: write' permission
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           # keep the branch history small
