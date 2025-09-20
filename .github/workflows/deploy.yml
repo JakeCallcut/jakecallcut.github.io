@@ -30,7 +30,8 @@ jobs:
         run: npm run build
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
+        # use the newer Pages artifact action (avoids older artifact action versions)
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./dist
 
