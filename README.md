@@ -1,25 +1,25 @@
-# Jake Callcut — Portfolio
+# Jake Callcut — Personal Portfolio
 
-This repo contains a Vite + React + TypeScript portfolio site configured for GitHub Pages.
+Live: https://jakecallcut.dev
 
-## Quick start
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Frontend](https://img.shields.io/badge/frontend-React%2BTypeScript-blue)
+![Deployment](https://img.shields.io/badge/deploy-GitHub%20Pages-blueviolet)
+![Hosting](https://img.shields.io/badge/hosting-GitHub%20Pages-lightgrey)
+![Tests](https://img.shields.io/badge/tests-vitest-yellow)
 
-- Install dependencies: `npm ci`
-- Run dev server: `npm run dev`
-- Build production: `npm run build`
+This repository contains a minimal, fast personal portfolio built with React, TypeScript, Vite and Tailwind CSS.
 
-## Deployment (GitHub Pages)
+## Branches
+- `gh-pages` — production branch that hosts the live site (current branch).
+- `main` — primary development branch.
 
-This repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds the site and publishes to GitHub Pages. The workflow sets `VITE_BASE` to `/jakecallcut.github.io/` during the build so Vite emits assets with the correct base path when hosting under `https://<user>.github.io/<repo>/`.
+## Screenshots
 
-If you change the repository name or host at a custom domain, update `VITE_BASE` in the workflow and the `index.html` canonical link.
+Desktop
 
-## SEO
+![Desktop screenshot](/scs/desktop_sc.png)
 
-- Per-page meta tags are added with `src/lib/seo.tsx` using `react-helmet-async`.
-- The Home page includes Person and WebSite JSON-LD structured data.
+Mobile
 
-## Notes
-
-- Tailwind CSS is configured with semantic tokens in `tailwind.config.ts` and CSS variables in `src/styles/globals.css`.
-- If you run into PostCSS/Tailwind errors, confirm the installed Tailwind major version and the `postcss.config.cjs` plugin configuration.
+![Mobile screenshot](/scs/mobile_sc.png)
