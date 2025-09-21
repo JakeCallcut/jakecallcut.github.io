@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion';
 import Section from '../components/Section';
 import SocialLinks from '../components/SocialLinks';
+import ProjectCard from '../components/ProjectCard';
+import { Link } from 'react-router-dom';
 import content from '../data/content.json';
 import SEO, { personJSONLD, websiteJSONLD } from '../lib/seo';
 
@@ -23,26 +25,19 @@ export default function Home() {
         <h2 className="text-2xl text-sand-dark font-semibold mb-2">{hero.title}</h2>
         <p className="max-w-2xl text-center text-lg text-sand-dark mb-4">{hero.tagline}</p>
         <SocialLinks className="mt-2 text-sand-dark" />
-        <a href="#contact" className="mt-6 btn text-lg px-6 py-3 bg-sand-peach text-sand-dark rounded-2xl shadow-soft hover:bg-sand-tan">{hero.cta}</a>
+  <Link
+          to="/contact"
+          className="mt-6 inline-flex items-center justify-center gap-3 bg-primary text-primary-foreground px-6 py-3 text-lg rounded-2xl shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary transition-transform transform-gpu hover:-translate-y-0.5"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden className="opacity-90"><path d="M21 8V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-2" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/><path d="M7 12h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+          {hero.cta}
+        </Link>
         <span className="text-base text-sand-dark mt-2">{hero.location}</span>
       </div>
-      <Section title="Featured Projects">
+      <Section title="Featured Projects" className="mt-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.filter(p => p.featured).map(project => (
-            <div key={project.name} className="rounded-2xl shadow-soft p-8 bg-card flex flex-col items-center">
-              <img src={project.image} alt={project.name} className="w-full h-48 object-cover rounded-xl mb-6 border-2 border-primary" />
-              <h3 className="text-2xl font-bold mb-2 text-center">{project.name}</h3>
-              <p className="text-muted-foreground mb-4 text-center">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4 justify-center">
-                {project.tech.map((tech: string) => (
-                  <span key={tech} className="badge badge-outline">{tech}</span>
-                ))}
-              </div>
-              <div className="flex gap-4 justify-center">
-                {project.links.demo && <a href={project.links.demo} className="btn btn-sm btn-secondary" target="_blank" rel="noopener">Demo</a>}
-                {project.links.source && <a href={project.links.source} className="btn btn-sm btn-outline" target="_blank" rel="noopener">Source</a>}
-              </div>
-            </div>
+            <ProjectCard key={project.name} project={project} />
           ))}
         </div>
       </Section>

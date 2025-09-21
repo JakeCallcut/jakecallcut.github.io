@@ -2,47 +2,47 @@
 @config "../../tailwind.config.ts";
 
 :root {
-  /* light theme */
-  --background: #f3e3c3; /* sand.light */
-  --foreground: #23241f; /* sand.dark */
+  /* light theme - muted indigo + warm sand */
+  --background: #f7f5f2; /* warm off-white */
+  --foreground: #1f2a44; /* deep indigo */
 
-  --card: #f6d1a0;
-  --card-foreground: #23241f;
+  --card: #fff8f2; /* warm card */
+  --card-foreground: #1f2a44;
 
-  --muted: #dcc7a0;
-  --muted-foreground: #23241f;
+  --muted: #efe7dd;
+  --muted-foreground: #1f2a44;
 
-  --border: #e3cba7;
-  --input: #e3cba7;
-  --ring: #23241f;
+  --border: #e7ddd1;
+  --input: #f3ebe3;
+  --ring: #6b7280; /* neutral focus ring */
 
-  --primary: #23241f;
-  --primary-foreground: #f3e3c3;
+  --primary: #4c51bf; /* muted indigo */
+  --primary-foreground: #ffffff;
 
-  --secondary: #dcc7a0;
-  --secondary-foreground: #23241f;
+  --secondary: #c76b3a; /* warm sand / terracotta accent */
+  --secondary-foreground: #ffffff;
 }
 
 .dark {
-  /* dark theme */
-  --background: #23241f;
-  --foreground: #f3e3c3;
+  /* dark theme - indigo night with warm sand accents */
+  --background: #0f1224; /* deep navy */
+  --foreground: #f6f3ef; /* light foreground */
 
-  --card: #2b2c27;
-  --card-foreground: #f3e3c3;
+  --card: #1c1f33;
+  --card-foreground: #f6f3ef;
 
-  --muted: #3a3b35;
-  --muted-foreground: #e8dcc4;
+  --muted: #1b2030;
+  --muted-foreground: #eae6df;
 
-  --border: #3a3b35;
-  --input: #3a3b35;
-  --ring: #f3e3c3;
+  --border: #1b2030;
+  --input: #1b2030;
+  --ring: #6b7280; /* neutral focus ring */
 
-  --primary: #f3e3c3;
-  --primary-foreground: #23241f;
+  --primary: #8d96ff; /* softer indigo for contrast in dark */
+  --primary-foreground: #1b2247;
 
-  --secondary: #2b2c27;
-  --secondary-foreground: #f3e3c3;
+  --secondary: #ffb58a; /* warm sand highlight */
+  --secondary-foreground: #0f1224;
 }
 
 html {

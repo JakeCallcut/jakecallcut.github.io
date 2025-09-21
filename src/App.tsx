@@ -28,7 +28,6 @@ function App() {
         </main>
         <Footer />
       </div>
-      <ThemeToggle />
     </BrowserRouter>
   );
 }
