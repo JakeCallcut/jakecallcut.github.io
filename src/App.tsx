@@ -2,7 +2,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import ThemeToggle from './components/ThemeToggle';
 import Home from './routes/Home';
 import Projects from './routes/Projects';
 import Experience from './routes/Experience';
