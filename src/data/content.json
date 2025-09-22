@@ -24,8 +24,9 @@
       "role": "Developer",
       "period": "2025 — Present",
       "location": "Glasgow, Scotland",
+      "image": "/experience-one.png",
       "bullets": [
-        "Collaborated with a cross-functional team to design and deliver a next-generation NFC product.",
+        "Developed an iOS app that uses NFC tiles and encrypted payloads to trigger custom shortcuts and actions.",
         "Introduced modern DevOps workflows that reduced release friction and improved reliability."
       ]
     },
@@ -34,6 +35,7 @@
       "role": "Software Engineer",
       "period": "2024 — Present",
       "location": "Edinburgh, Scotland",
+      "image": "/experience-two.png",
       "bullets": [
         "Developed software to support healthcare technology used in clinical environments.",
         "Worked closely with engineers and medical staff to ensure safety-critical compliance."
@@ -44,14 +46,24 @@
     {
       "University": "Heriot-Watt University",
       "Programme": "MEng Software Engineering",
+      "grade": "On track for First Class Honours",
       "period": "2022 — 2027",
+      "image": "/education-one.png",
       "location": "Edinburgh, Scotland"
+    },
+    {
+      "University": "Torquay Boys' Grammar School",
+      "Programme": "A Levels: Maths, Physics, Computer Science",
+      "grade": "AAA",
+      "period": "2020 — 2022",
+      "image": "/education-two.png",
+      "location": "Torquay, England"
     }
   ],
   "projects": [
     {
       "name": "Lumina",
-      "description": "A smart lighting system integrating IoT hardware with a mobile app. Lumina enables users to control and automate lighting through a sleek Flutter interface while syncing with Raspberry Pi-powered devices in real time.",
+      "description": "A smart home system integrating IoT hardware with a mobile app. Lumina enables users to control and automate devices through a sleek Flutter interface while syncing with a Raspberry Pi-powered hub in real time.",
       "tech": ["Flutter", "Firebase", "Socket.IO", "Raspberry Pi"],
       "links": {
         "demo": "https://demo.url",

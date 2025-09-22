@@ -11,7 +11,7 @@ interface Project {
 export default function ProjectCard({ project }: { project: Project }) {
   return (
   <div className="rounded-2xl shadow-soft p-8 bg-card flex flex-col items-center">
-  <img src={project.image} alt={project.name} className="w-full h-80 object-cover rounded-xl mb-6 border-2 border-primary" />
+  <img src={project.image} alt={project.name} className="w-full aspect-[16/9] object-cover rounded-xl mb-6 border-2 border-primary" />
       <h3 className="text-2xl font-bold mb-2 text-center">{project.name}</h3>
       <p className="text-muted-foreground mb-4 text-center">{project.description}</p>
       <div className="flex flex-wrap gap-2 mb-4 justify-center">

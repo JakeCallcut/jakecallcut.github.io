@@ -30,15 +30,31 @@ export default function About() {
         </div>
         <div className="mb-6">
           <h2 className="text-xl font-semibold mb-4">Education</h2>
-          <div className="grid gap-4">
+          <div className="grid gap-6">
             {education.map((edu, idx) => (
-              <div key={idx} className="rounded-2xl bg-card shadow-soft p-4 flex flex-col gap-1">
-                <div className="font-bold text-lg text-primary">{edu.University}</div>
-                <div className="flex flex-wrap gap-2 items-center">
-                  <span className="badge badge-outline">{edu.Programme}</span>
-                  <span className="badge badge-secondary">{edu.period}</span>
+              <div key={idx} className="rounded-2xl bg-card shadow-soft p-6">
+                <div className="flex flex-col md:flex-row gap-4">
+                  {edu.image && (
+                    <div className="flex-shrink-0">
+                      <img 
+                        src={edu.image} 
+                        alt={`${edu.University} logo`} 
+                        className="w-16 h-16 object-contain rounded-xl border-2 border-primary/20 bg-muted/10" 
+                      />
+                    </div>
+                  )}
+                  <div className="flex-1">
+                    <div className="font-bold text-lg text-primary mb-2">{edu.University}</div>
+                    <div className="font-medium text-base mb-2">{edu.Programme}</div>
+                    <div className="flex flex-wrap gap-2 items-center mb-2">
+                      <span className="badge badge-outline">{edu.period}</span>
+                      {edu.grade && (
+                        <span className="badge badge-secondary">{edu.grade}</span>
+                      )}
+                    </div>
+                    <div className="text-sm text-muted-foreground">{edu.location}</div>
+                  </div>
                 </div>
-                <div className="text-sm text-muted-foreground">{edu.location}</div>
               </div>
             ))}
           </div>
