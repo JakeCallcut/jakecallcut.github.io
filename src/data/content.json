@@ -14,31 +14,42 @@
     "website": "https://jakecallcut.dev"
   },
   "about": {
-    "bio": "I’m a software engineer with a passion for blending design and technology. With experience spanning mobile apps, embedded systems, and full-stack development, I enjoy solving complex problems and delivering polished, human-centered solutions. Outside of work, I’m always learning new tools and exploring how technology can make everyday life a little easier.",
-    "skills": ["Swift", "Flutter", "Java", "Python", "Ada/SPARK"],
+    "bio": "I'm a software engineer with a passion for blending design and technology. With experience spanning mobile apps, embedded systems, and full-stack development, I enjoy solving complex problems and delivering polished, human-centered solutions. Outside of work, I’m always learning new tools and exploring how technology can make everyday life a little easier.",
+    "skills": ["Swift", "Flutter", "Java", "Python", "TypeScript"],
     "toolbox": ["VS Code", "Xcode", "Figma", "Git", "Docker"]
   },
   "experience": [
     {
       "company": "Squircle",
       "role": "Developer",
-      "period": "2025 — Present",
+      "period": "Jul 2025 — Present",
       "location": "Glasgow, Scotland",
       "image": "/experience-one.png",
       "bullets": [
-        "Developed an iOS app that uses NFC tiles and encrypted payloads to trigger custom shortcuts and actions.",
-        "Introduced modern DevOps workflows that reduced release friction and improved reliability."
+        "Independently designed and engineered an iOS app that uses RFID Hardware and encrypted payloads to trigger custom shortcuts and actions.",
+        "Aided in establishing B2B and B2C Logistics and coordinating trials with clients."
       ]
     },
     {
       "company": "GI Healthcare Industries Limited",
       "role": "Software Engineer",
-      "period": "2024 — Present",
+      "period": "Aug 2024 — Present",
       "location": "Edinburgh, Scotland",
       "image": "/experience-two.png",
       "bullets": [
-        "Developed software to support healthcare technology used in clinical environments.",
-        "Worked closely with engineers and medical staff to ensure safety-critical compliance."
+        "Solely developed and launched the company's website, gihealthcare.co.uk, using Flutter and Azure, bringing the company online and enabling engagement with clients and partners.",
+        "Collaborated with a team of developers to build a multi-machine control system using Flutter, Bloc state management, and adhering to SOLID principles and the MVC architecture to ensure scalable, maintainable, and efficient code."
+      ]
+    },
+        {
+      "company": "GI Healthcare Industries Limited",
+      "role": "UI/UX Intern",
+      "period": "Jun 2024 — Aug 2024",
+      "location": "Edinburgh, Scotland",
+      "image": "/experience-two.png",
+      "bullets": [
+        "Designed the front-end interface for a multi-machine control system, from low-fidelity wireframes to developer-ready handoff using Figma. Helping take the company's new product from TRL 3 to TRL 5.",
+        "Liased with engineers and military personnel to ensure the interface met user needs and operational requirements."
       ]
     }
   ],
