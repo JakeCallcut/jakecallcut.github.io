@@ -84,6 +84,17 @@
       "featured": true
     },
     {
+      "name": "Social Sentiment Analysis for Sector-Level Stock Market Prediction",
+      "description": "Honours Dissertation: This project focuses on leveraging social media sentiment analysis to predict stock market trends at the sector level. By analyzing tweets and news articles, the model aims to provide insights into market movements and investor sentiment.",
+      "tech": ["Python", "finBERT", "NLP", "API", "Streamlit"],
+      "links": {
+        "demo": "https://demo.url",
+        "source": ""
+      },
+      "image": "/project-three.png",
+      "featured": true
+    },
+    {
       "name": "Selbury",
       "description": "Selbury is a UK-focused compliance SaaS platform designed to help small businesses understand and manage their legal obligations. By combining a tailored compliance radar, plain-English regulation summaries, and a simple tracking dashboard.",
       "tech": ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
@@ -92,7 +103,7 @@
         "source": "https://github.com/JakeCallcut/Selbury"
       },
       "image": "/project-two.png",
-      "featured": true
+      "featured": false
     }
   ],
   "contact": {
