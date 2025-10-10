@@ -95,6 +95,17 @@
       "featured": true
     },
     {
+      "name": "Judging Music by its Cover",
+      "description": "This Project involves developing a data mining algorithm in python to fetch a dataset of over 50,000 tracks and training a predictive model to classify test data into genres based on audio features and cover art.",
+      "tech": ["Python", "API", "Machine Vision", "ML", "pandas"],
+      "links": {
+        "demo": "https://demo.url",
+        "source": ""
+      },
+      "image": "/project-four.png",
+      "featured": true
+    },
+    {
       "name": "Selbury",
       "description": "Selbury is a UK-focused compliance SaaS platform designed to help small businesses understand and manage their legal obligations. By combining a tailored compliance radar, plain-English regulation summaries, and a simple tracking dashboard.",
       "tech": ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
