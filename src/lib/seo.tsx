@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-const SITE_TITLE = 'Jake Callcut - Designer & Developer';
+const SITE_TITLE = 'Jake Callcut - Software Engineer';
 const SITE_URL = 'https://jakecallcut.dev';
 const DEFAULT_IMAGE = '/og-image.png';
 

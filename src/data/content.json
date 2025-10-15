@@ -1,8 +1,8 @@
 {
   "hero": {
     "name": "Jake Callcut",
-    "title": "Designer & Developer",
-    "tagline": "Building thoughtful digital products with equal parts design and engineering.",
+    "title": "Software Engineer",
+    "tagline": "Building reliable, data-driven systems with equal parts precision and purpose",
     "cta": "Get in touch",
     "location": "Edinburgh, Scotland",
     "portrait": "/portrait.jpg"
@@ -14,20 +14,20 @@
     "website": "https://jakecallcut.dev"
   },
   "about": {
-    "bio": "I'm a software engineer with a passion for blending design and technology. With experience spanning mobile apps, embedded systems, and full-stack development, I enjoy solving complex problems and delivering polished, human-centered solutions. Outside of work, I’m always learning new tools and exploring how technology can make everyday life a little easier.",
+    "bio": "I'm a software Engineer with a focus on building reliable, secure, and data-driven systems. My experience spans data analysis, machine learning, and embedded software. I am passionate about creating thoughtful software solutions, with efficient design and attention to detail. My time working with startups taught me how to move quickly, solve problems creatively, and take ownership from concept to deployment.",
     "skills": ["Swift", "Flutter", "Java", "Python", "TypeScript"],
     "toolbox": ["VS Code", "Xcode", "Figma", "Git", "Docker"]
   },
   "experience": [
     {
       "company": "Squircle",
-      "role": "Developer",
+      "role": "Software Engineer",
       "period": "Jul 2025 — Present",
       "location": "Glasgow, Scotland",
       "image": "/experience-one.png",
       "bullets": [
-        "Independently designed and engineered an iOS app that uses RFID Hardware and encrypted payloads to trigger custom shortcuts and actions.",
-        "Aided in establishing B2B and B2C Logistics and coordinating trials with clients."
+        "Independently designed and developed the company's consumer mobile app and companion business platform, delivering end-to-end functionality from UI/UX to deployment.",
+        "Contributed to investor pitches and funding applications, helping the startup secure grants and investment by showcasing technical feasibility and product potential."
       ]
     },
     {
@@ -37,8 +37,8 @@
       "location": "Edinburgh, Scotland",
       "image": "/experience-two.png",
       "bullets": [
-        "Solely developed and launched the company's website, gihealthcare.co.uk, using Flutter and Azure, bringing the company online and enabling engagement with clients and partners.",
-        "Collaborated with a team of developers to build a multi-machine control system using Flutter, Bloc state management, and adhering to SOLID principles and the MVC architecture to ensure scalable, maintainable, and efficient code."
+        "Architected and implemented a multi-machine control system with a custom server–client design using Flutter, TypeScript, and Socket.IO, ensuring a high fault tolerance.",
+        "Attended stakeholder product demonstrations, engaging with end-users to gather requirements, observe operational needs, and provide feedback to improve system reliability and usability."
       ]
     },
         {
