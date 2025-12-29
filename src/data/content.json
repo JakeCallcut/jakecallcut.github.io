@@ -15,7 +15,7 @@
   },
   "about": {
     "bio": "I'm a software Engineer with a focus on building reliable, secure, and data-driven systems. My experience spans data analysis, machine learning, and embedded software. I am passionate about creating thoughtful software solutions, with efficient design and attention to detail. My time working with startups taught me how to move quickly, solve problems creatively, and take ownership from concept to deployment.",
-    "skills": ["Swift", "Flutter", "Java", "Python", "TypeScript"],
+    "skills": ["Python", "Java", "TypeScript", "Dart", "Flutter"],
     "toolbox": ["VS Code", "Xcode", "Figma", "Git", "Docker"]
   },
   "experience": [
@@ -33,7 +33,7 @@
     {
       "company": "GI Healthcare Industries Limited",
       "role": "Software Engineer",
-      "period": "Aug 2024 — Present",
+      "period": "Aug 2024 — Nov 2025",
       "location": "Edinburgh, Scotland",
       "image": "/experience-two.png",
       "bullets": [
