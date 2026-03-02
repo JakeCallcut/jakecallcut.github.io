@@ -89,7 +89,7 @@
       "tech": ["Python", "finBERT", "NLP", "API", "Streamlit"],
       "links": {
         "demo": "https://demo.url",
-        "source": ""
+        "source": "https://github.com/JakeCallcut/market-sector-sentiment-model"
       },
       "image": "/project-three.png",
       "featured": true
@@ -103,6 +103,17 @@
         "source": ""
       },
       "image": "/project-four.png",
+      "featured": true
+    },
+    {
+      "name": "Social Mobility Data Story",
+      "description": "This project features an in-depth, rigorous analysis of two datasets from Portuguese education institutions. By using a logistic regression model we assessed graduation probability and dropout risk in order to gain insights on the impact of external features on academic performance.",
+      "tech": ["Python", "Jupyter", "pandas", "ML", "ggplot"],
+      "links": {
+        "demo": "https://demo.url",
+        "source": "https://github.com/JakeCallcut/Academic-Data-Story"
+      },
+      "image": "/project-five.png",
       "featured": true
     },
     {
