@@ -42,7 +42,7 @@ export default function Home() {
         </div>
       </Section>
       <Section title="Now">
-        <p className="text-lg">Currently building at Squircle & GI Healthcare, based in Edinburgh.</p>
+        <p className="text-lg">Currently building at STMicroelectronics, based in Edinburgh.</p>
       </Section>
     </motion.section>
   );

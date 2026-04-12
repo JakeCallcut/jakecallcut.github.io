@@ -20,9 +20,19 @@
   },
   "experience": [
     {
+      "company": "STMicroelectronics",
+      "role": "AI & Machine Learning Engineer Intern",
+      "period": "May 2026 — Present",
+      "location": "Edinburgh, Scotland",
+      "image": "/experience-three.png",
+      "bullets": [
+
+      ]
+    },
+    {
       "company": "Squircle",
       "role": "Software Engineer",
-      "period": "Jul 2025 — Present",
+      "period": "Jul 2025 — May 2026",
       "location": "Glasgow, Scotland",
       "image": "/experience-one.png",
       "bullets": [
