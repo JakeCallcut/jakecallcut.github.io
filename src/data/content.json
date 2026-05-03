@@ -10,6 +10,7 @@
   "social": {
     "github": "https://github.com/JakeCallcut",
     "linkedin": "https://www.linkedin.com/in/j-callcut",
+    "kaggle": "https://www.kaggle.com/jakecal",
     "email": "hello@jakecallcut.dev",
     "website": "https://jakecallcut.dev"
   },
@@ -125,17 +126,6 @@
       },
       "image": "/project-five.png",
       "featured": true
-    },
-    {
-      "name": "Selbury",
-      "description": "Selbury is a UK-focused compliance SaaS platform designed to help small businesses understand and manage their legal obligations. By combining a tailored compliance radar, plain-English regulation summaries, and a simple tracking dashboard.",
-      "tech": ["Next.js", "Tailwind CSS", "Node.js", "PostgreSQL"],
-      "links": {
-        "demo": "https://demo.url",
-        "source": "https://github.com/JakeCallcut/Selbury"
-      },
-      "image": "/project-two.png",
-      "featured": false
     }
   ],
   "contact": {
