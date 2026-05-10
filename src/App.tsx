@@ -6,6 +6,8 @@ import Home from './routes/Home';
 import Projects from './routes/Projects';
 import Experience from './routes/Experience';
 import About from './routes/About';
+import Writing from './routes/Writing';
+import WritingPost from './routes/WritingPost';
 import Contact from './routes/Contact';
 import './styles/globals.css';
 
@@ -21,6 +23,8 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/experience" element={<Experience />} />
               <Route path="/about" element={<About />} />
+              <Route path="/writing" element={<Writing />} />
+              <Route path="/writing/:slug" element={<WritingPost />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
           </AnimatePresence>

@@ -38,7 +38,7 @@
   --input: #1b2030;
   --ring: #6b7280; /* neutral focus ring */
 
-  --primary: #8d96ff; /* softer indigo for contrast in dark */
+  --primary: #6a71be; /* softer indigo for contrast in dark */
   --primary-foreground: #1b2247;
 
   --secondary: #ffb58a; /* warm sand highlight */
@@ -47,4 +47,88 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+.writing-content {
+  color: var(--foreground);
+  font-size: 1.05rem;
+  line-height: 1.9;
+}
+
+.writing-content h1,
+.writing-content h2,
+.writing-content h3,
+.writing-content h4 {
+  color: var(--foreground);
+  font-weight: 800;
+  line-height: 1.2;
+  scroll-margin-top: 6rem;
+}
+
+.writing-content h1 {
+  margin: 2rem 0 1rem;
+  font-size: 2.25rem;
+}
+
+.writing-content h2 {
+  margin: 1.75rem 0 0.75rem;
+  font-size: 1.75rem;
+}
+
+.writing-content h3 {
+  margin: 1.5rem 0 0.5rem;
+  font-size: 1.35rem;
+}
+
+.writing-content p,
+.writing-content ul,
+.writing-content ol,
+.writing-content blockquote,
+.writing-content pre {
+  margin: 1rem 0;
+}
+
+.writing-content a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+.writing-content ul,
+.writing-content ol {
+  padding-left: 1.5rem;
+}
+
+.writing-content li + li {
+  margin-top: 0.35rem;
+}
+
+.writing-content blockquote {
+  border-left: 4px solid var(--secondary);
+  padding-left: 1rem;
+  font-style: italic;
+  color: color-mix(in srgb, var(--foreground) 82%, transparent);
+}
+
+.writing-content pre {
+  overflow-x: auto;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--muted);
+}
+
+.writing-content code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95em;
+}
+
+.writing-content :not(pre) > code {
+  border-radius: 0.4rem;
+  background: var(--muted);
+  padding: 0.15rem 0.35rem;
+}
+
+.writing-content img {
+  max-width: 100%;
+  border-radius: 1rem;
 }
