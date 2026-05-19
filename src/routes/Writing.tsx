@@ -28,18 +28,20 @@ export default function Writing() {
             to={`/writing/${post.slug}`}
             className="relative group rounded-3xl border border-border bg-card p-6 shadow-soft transition-transform duration-200 hover:-translate-y-1 hover:shadow-lg"
           >
-            <div className="absolute top-4 right-4 text-xs text-muted-foreground space-x-2">
-              <span>{formatDate(post.date)}</span>
-              <span>•</span>
-              <span>{formatReadingTime(post.readingMinutes)}</span>
-            </div>
             <h2 className="text-2xl font-bold tracking-tight text-foreground transition-colors group-hover:text-primary">
               {post.title}
             </h2>
             <p className="mt-3 text-base leading-7 text-muted-foreground">{post.description}</p>
-            <div className="mt-6 inline-flex items-center gap-2 font-medium text-primary">
-              <span>Read post</span>
-              <span aria-hidden="true">→</span>
+            <div className="mt-6 flex items-center justify-between">
+              <div className="inline-flex items-center gap-2 font-medium text-primary">
+                <span>Read post</span>
+                <span aria-hidden="true">→</span>
+              </div>
+              <div className="flex items-center text-[10px] sm:text-xs space-x-2 text-muted-foreground">
+                <span>{formatDate(post.date)}</span>
+                <span>•</span>
+                <span>{formatReadingTime(post.readingMinutes)}</span>
+              </div>
             </div>
           </Link>
         ))}
