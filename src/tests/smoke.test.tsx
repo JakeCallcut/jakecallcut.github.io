@@ -1,5 +1,5 @@
 // @vitest-environment jsdom
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import '@testing-library/jest-dom/vitest';
 import { describe, expect, it, beforeAll, beforeEach } from 'vitest';
 import App from '../App';
@@ -61,5 +61,24 @@ describe('Portfolio Smoke Test', () => {
 
     expect(restored).toBe(true);
     expect(window.location.pathname).toBe('/writing/why-does-tech-have-taste');
+  });
+
+  it('renders the in-app 404 route for unknown paths', () => {
+    window.history.pushState({}, '', '/does-not-exist');
+
+    render(<App />);
+
+    const problemHeading = screen.getByRole('heading', { name: /There was a problem\./i });
+    const notFoundCard = problemHeading.closest('div');
+
+    expect(problemHeading).toBeInTheDocument();
+    expect(notFoundCard).not.toBeNull();
+
+    if (!notFoundCard) {
+      return;
+    }
+
+    expect(within(notFoundCard).getByRole('link', { name: /^Home$/i })).toBeInTheDocument();
+    expect(within(notFoundCard).getByRole('link', { name: /^Contact$/i })).toBeInTheDocument();
   });
 });

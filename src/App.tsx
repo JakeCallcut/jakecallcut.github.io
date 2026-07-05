@@ -9,6 +9,7 @@ import About from './routes/About';
 import Writing from './routes/Writing';
 import WritingPost from './routes/WritingPost';
 import Contact from './routes/Contact';
+import NotFound from './routes/NotFound';
 import './styles/globals.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
               <Route path="/writing" element={<Writing />} />
               <Route path="/writing/:slug" element={<WritingPost />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </AnimatePresence>
         </main>
