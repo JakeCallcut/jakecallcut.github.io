@@ -51,7 +51,7 @@ But a text file describing the structure and usage of the site has obvious limit
 
 The aforementioned solutions point to an undeniable fact that there is no magic bullet to allow AI agents to interact with our existing systems. Sophisticated platforms with enough engineering resources can build complex MCP servers, smaller businesses may implement a guide for agents, and everything else will be left to the best guesses from browser automation. Either way, the assumption that internet users are human, is largely outdated and our current systems may need a large overhaul. The lasting results of this could be a two-tier web, where AI can seamlessly interact with some sites but struggle with others in the same way mobile responsiveness divided the web a decade ago. The platforms and businesses which treat AI interaction as a first-class concern will likely have an advantage in a fast-paced world where agents operate all over the web.
 
-> Sources:
+> References & Further Reading:
 _<small>https://ia.acs.org.au/article/2026/ai-internet-traffic-surges-as-agents-swarm-the-web.html</small>_
 _<small>https://sqmagazine.co.uk/ai-agent-autonomy-statistics/</small>_
 
