@@ -27,7 +27,9 @@
       "location": "Edinburgh, Scotland",
       "image": "/experience-three.png",
       "bullets": [
-
+        "Independently researching and implementing state-of-the-art generative AI methods for synthetic data augmentation within the Data and Knowledge Engineering Team, improving defect detection accuracy on semiconductor wafers by 8%.",
+        "Applying diffusion models with LoRA fine-tuning on proprietary datasets to generate high-fidelity synthetic wafer imagery, increasing available training data by 20%.",
+        "Utilising PyTorch alongside CNN and transformer architectures to evaluate and benchmark data augmentation strategies."
       ]
     },
     {

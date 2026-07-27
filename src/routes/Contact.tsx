@@ -48,7 +48,7 @@ export default function Contact() {
         <div className="mb-2">Or email directly: <a href={`mailto:${contact.email}`} className="text-primary underline">{contact.email}</a></div>
         <div className="mb-6">{contact.note}</div>
         <a 
-          href="/Jake Callcut.pdf" 
+          href="/Jake_Callcut_CV.pdf" 
           download="Jake_Callcut_CV.pdf"
           className="mt-8 inline-flex items-center justify-center gap-2 bg-secondary text-secondary-foreground px-5 py-3 text-base rounded-2xl shadow-md hover:shadow-lg focus-visible:ring-2 focus-visible:ring-primary transition-transform transform-gpu hover:-translate-y-0.5"
         >
