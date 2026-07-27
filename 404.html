@@ -3,12 +3,188 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Redirecting</title>
+    <meta name="theme-color" content="#f7f5f2" />
+    <title>Page not found</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --background: #f7f5f2;
+        --foreground: #1f2a44;
+        --card: rgba(255, 248, 242, 0.86);
+        --border: rgba(231, 221, 209, 0.9);
+        --primary: #4c51bf;
+        --secondary: #c76b3a;
+        --muted: #efe7dd;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        margin: 0;
+        min-height: 100%;
+      }
+
+      body {
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        color: var(--foreground);
+        background:
+          radial-gradient(circle at top left, rgba(196, 142, 104, 0.22), transparent 34%),
+          radial-gradient(circle at bottom right, rgba(76, 81, 191, 0.14), transparent 32%),
+          linear-gradient(180deg, #fbf8f4 0%, var(--background) 100%);
+      }
+
+      .wrap {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 24px;
+      }
+
+      .card {
+        width: min(100%, 760px);
+        border: 1px solid var(--border);
+        border-radius: 28px;
+        background: var(--card);
+        backdrop-filter: blur(14px);
+        box-shadow: 0 24px 80px rgba(31, 42, 68, 0.1);
+        overflow: hidden;
+        position: relative;
+      }
+
+      .card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(135deg, rgba(76, 81, 191, 0.08), transparent 40%),
+          linear-gradient(225deg, rgba(199, 107, 58, 0.08), transparent 36%);
+        pointer-events: none;
+      }
+
+      .inner {
+        position: relative;
+        padding: 32px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: 8px 14px;
+        font-size: 12px;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        background: rgba(255, 255, 255, 0.45);
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 999px;
+        background: var(--secondary);
+        box-shadow: 0 0 0 6px rgba(199, 107, 58, 0.12);
+      }
+
+      h1 {
+        margin: 20px 0 10px;
+        font-size: clamp(2.5rem, 7vw, 5rem);
+        line-height: 0.95;
+        letter-spacing: -0.05em;
+      }
+
+      p {
+        margin: 0;
+      }
+
+      .lede {
+        max-width: 52ch;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: rgba(31, 42, 68, 0.8);
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        align-items: center;
+        margin-top: 28px;
+      }
+
+      .button {
+        appearance: none;
+        border: 0;
+        border-radius: 999px;
+        padding: 12px 18px;
+        font: inherit;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+      }
+
+      .primary {
+        color: white;
+        background: linear-gradient(135deg, var(--primary), #6f75d8);
+        box-shadow: 0 14px 34px rgba(76, 81, 191, 0.25);
+      }
+
+      .secondary {
+        color: var(--foreground);
+        background: rgba(255, 255, 255, 0.68);
+        border: 1px solid var(--border);
+      }
+
+      @media (max-width: 640px) {
+        .inner {
+          padding: 24px;
+        }
+
+        .actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .button {
+          width: 100%;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="wrap">
+      <section class="card" aria-labelledby="page-title">
+        <div class="inner">
+          <div class="eyebrow"><span class="dot" aria-hidden="true"></span>404</div>
+          <h1 id="page-title">There was a problem.</h1>
+          <p class="lede">
+            The page you asked for could not be found.
+          </p>
+
+          <div class="actions">
+            <a class="button primary" href="/">Go home</a>
+            <a class="button secondary" href="/contact">Contact</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
     <script>
       (function () {
         var pathname = window.location.pathname;
+        var isDirect404 = pathname.endsWith('/404.html');
 
-        if (pathname.endsWith('/404.html')) {
+        if (isDirect404) {
           return;
         }
 
@@ -16,8 +192,5 @@
         window.location.replace('/?p=' + encodeURIComponent(target));
       })();
     </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
   </body>
 </html>
