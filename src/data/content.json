@@ -128,6 +128,17 @@
       },
       "image": "/project-five.png",
       "featured": false
+    },
+    {
+      "name": "TensoRoom",
+      "description": "AI powered interior design, this collaborative project uses a stable diffusion, segmentation, and LLM pipeline to allow you to simulate your interior design ideas and make dynamic changes",
+      "tech": ["Python", "Diffusers", "LLMs", "SAM", "Hugging Face", "Streamlit"],
+      "links": {
+        "demo": "https://demo.url",
+        "source": "https://github.com/JakeCallcut/Academic-Data-Story"
+      },
+      "image": "/project-six.png",
+      "featured": false
     }
   ],
   "contact": {
