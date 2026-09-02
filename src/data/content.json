@@ -130,14 +130,14 @@
       "featured": false
     },
     {
-      "name": "TensoRoom",
-      "description": "AI powered interior design, this collaborative project uses a stable diffusion, segmentation, and LLM pipeline to allow you to simulate your interior design ideas and make dynamic changes",
-      "tech": ["Python", "Diffusers", "LLMs", "SAM", "Hugging Face", "Streamlit"],
+      "name": "Prediction Market Calibration",
+      "description": "An end-to-end pipeline to collect, clean, analyse, and visualise data of two popular prediction markets: Kalshi and Polymarket. By wilson intervals and Brier scores, we reveal the calibration of the platforms",
+      "tech": ["Python", "APIs", "Pandas", "matplotlib", "Statistical methods", "Data handling"],
       "links": {
         "demo": "https://demo.url",
-        "source": "https://github.com/JakeCallcut/Academic-Data-Story"
+        "source": "https://github.com/JakeCallcut/prediction-market-calibration"
       },
-      "image": "/project-six.png",
+      "image": "/project-seven.png",
       "featured": false
     }
   ],
