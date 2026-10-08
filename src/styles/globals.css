@@ -1,134 +1,347 @@
 @import "tailwindcss";
-@config "../../tailwind.config.ts";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Theme tokens — monochrome paper & ink */
 :root {
-  /* light theme - muted indigo + warm sand */
-  --background: #f7f5f2; /* warm off-white */
-  --foreground: #1f2a44; /* deep indigo */
-
-  --card: #fff8f2; /* warm card */
-  --card-foreground: #1f2a44;
-
-  --muted: #efe7dd;
-  --muted-foreground: #1f2a44;
-
-  --border: #e7ddd1;
-  --input: #f3ebe3;
-  --ring: #6b7280; /* neutral focus ring */
-
-  --primary: #1c1c84; /* new navy */
-  --primary-foreground: #ffffff;
-
-  --secondary: #c76b3a; /* warm sand / terracotta accent */
-  --secondary-foreground: #ffffff;
+  --paper: #efefed;
+  --paper-2: #e5e5e2;
+  --ink: #0d0d0d;
+  --ink-2: #333331;
+  --muted: #666663;
+  --line: rgb(13 13 13 / 0.14);
+  --line-strong: rgb(13 13 13 / 0.85);
+  --invert-paper: #0d0d0d;
+  --invert-ink: #efefed;
+  --invert-muted: #8f8f8b;
+  --invert-line: rgb(239 239 237 / 0.16);
+  color-scheme: light;
 }
 
 .dark {
-  /* dark theme - indigo night with warm sand accents */
-  --background: #0f1224; /* deep navy */
-  --foreground: #f6f3ef; /* light foreground */
-
-  --card: #1c1f33;
-  --card-foreground: #f6f3ef;
-
-  --muted: #1b2030;
-  --muted-foreground: #eae6df;
-
-  --border: #1b2030;
-  --input: #1b2030;
-  --ring: #6b7280; /* neutral focus ring */
-
-  --primary: #6a71be; /* softer indigo for contrast in dark */
-  --primary-foreground: #1b2247;
-
-  --secondary: #ffb58a; /* warm sand highlight */
-  --secondary-foreground: #0f1224;
+  --paper: #0b0b0b;
+  --paper-2: #161615;
+  --ink: #ecece9;
+  --ink-2: #c4c4c0;
+  --muted: #8d8d89;
+  --line: rgb(236 236 233 / 0.14);
+  --line-strong: rgb(236 236 233 / 0.85);
+  --invert-paper: #141413;
+  --invert-ink: #ecece9;
+  --invert-muted: #8d8d89;
+  --invert-line: rgb(236 236 233 / 0.14);
+  color-scheme: dark;
 }
 
-html {
-  scroll-behavior: smooth;
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-2: var(--paper-2);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-line-strong: var(--line-strong);
+  --color-invert-paper: var(--invert-paper);
+  --color-invert-ink: var(--invert-ink);
+  --color-invert-muted: var(--invert-muted);
+  --color-invert-line: var(--invert-line);
 }
 
-.writing-content {
-  color: var(--foreground);
-  font-size: 1.05rem;
-  line-height: 1.9;
+@theme {
+  --font-sans: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.writing-content h1,
-.writing-content h2,
-.writing-content h3,
-.writing-content h4 {
-  color: var(--foreground);
-  font-weight: 800;
-  line-height: 1.2;
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    transition: background-color 300ms ease, color 300ms ease;
+  }
+
+  ::selection {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  :focus-visible {
+    outline: 1.5px solid var(--ink);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+}
+
+@layer components {
+  /* Page frame */
+  .frame {
+    width: 100%;
+    max-width: 1440px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .frame {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .frame {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* "Jake Callcut" set to span its container exactly (the set width is ~3.53em) */
+  .fit-name {
+    font-size: calc(100cqw / 3.56);
+    line-height: 0.8;
+    letter-spacing: -0.035em;
+  }
+
+  /* Small uppercase mono label */
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    line-height: 1.4;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* Pill buttons */
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 2.5rem;
+    padding-inline: 1.125rem;
+    border-radius: 999px;
+    font-size: 0.875rem;
+    font-weight: 450;
+    white-space: nowrap;
+    transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+  }
+  .pill-solid {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .pill-solid:hover {
+    background: var(--ink-2);
+  }
+  .pill-ghost {
+    border: 1px solid var(--line-strong);
+    color: var(--ink);
+  }
+  .pill-ghost:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  /* Underline that draws in on hover */
+  .link-draw {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 350ms var(--ease-out-expo);
+  }
+  .link-draw:hover,
+  .link-draw:focus-visible {
+    background-size: 100% 1px;
+  }
+
+  /* Greyscale imagery that develops into colour on hover */
+  .develop {
+    filter: grayscale(1) contrast(1.05);
+    transition: filter 600ms ease, transform 900ms var(--ease-out-expo);
+  }
+  .dark .develop {
+    filter: grayscale(1) contrast(1.05) brightness(0.8);
+  }
+  @media (hover: hover) {
+    .group:hover .develop {
+      filter: grayscale(0) contrast(1);
+      transform: scale(1.02);
+    }
+  }
+}
+
+/* Winged Victory reveal: a print-head sweep from the plinth upward */
+@property --reveal {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 110%;
+}
+
+@keyframes statue-reveal {
+  from {
+    --reveal: -10%;
+    opacity: 0.2;
+  }
+  to {
+    --reveal: 110%;
+    opacity: 1;
+  }
+}
+
+.statue-reveal {
+  -webkit-mask-image: linear-gradient(to top, #000 var(--reveal), transparent calc(var(--reveal) + 8%));
+  mask-image: linear-gradient(to top, #000 var(--reveal), transparent calc(var(--reveal) + 8%));
+  animation: statue-reveal 2.2s var(--ease-out-expo) 150ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .statue-reveal {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Long-form writing */
+.prose-editorial {
+  max-width: 42rem;
+  color: var(--ink-2);
+  font-size: 1.0625rem;
+  line-height: 1.8;
+}
+
+@media (min-width: 768px) {
+  .prose-editorial {
+    font-size: 1.125rem;
+  }
+}
+
+.prose-editorial > :first-child {
+  margin-top: 0;
+}
+
+.prose-editorial h1,
+.prose-editorial h2,
+.prose-editorial h3,
+.prose-editorial h4 {
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
   scroll-margin-top: 6rem;
 }
 
-.writing-content h1 {
-  margin: 2rem 0 1rem;
-  font-size: 2.25rem;
+.prose-editorial h1 {
+  margin: 3rem 0 1rem;
+  font-size: 2.5rem;
 }
 
-.writing-content h2 {
-  margin: 1.75rem 0 0.75rem;
-  font-size: 1.75rem;
+.prose-editorial h2 {
+  margin: 3rem 0 1rem;
+  font-size: 2rem;
 }
 
-.writing-content h3 {
-  margin: 1.5rem 0 0.5rem;
-  font-size: 1.35rem;
+.prose-editorial h3 {
+  margin: 2.25rem 0 0.75rem;
+  font-size: 1.5rem;
 }
 
-.writing-content p,
-.writing-content ul,
-.writing-content ol,
-.writing-content blockquote,
-.writing-content pre {
-  margin: 1rem 0;
+.prose-editorial p,
+.prose-editorial ul,
+.prose-editorial ol,
+.prose-editorial blockquote,
+.prose-editorial pre {
+  margin: 1.25rem 0;
 }
 
-.writing-content a {
-  color: var(--primary);
+.prose-editorial strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.prose-editorial a {
+  color: var(--ink);
   text-decoration: underline;
+  text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
+  transition: text-decoration-color 200ms ease;
 }
 
-.writing-content ul,
-.writing-content ol {
-  padding-left: 1.5rem;
+.prose-editorial a:hover {
+  text-decoration-color: var(--muted);
 }
 
-.writing-content li + li {
-  margin-top: 0.35rem;
+.prose-editorial ul,
+.prose-editorial ol {
+  padding-left: 1.25rem;
 }
 
-.writing-content blockquote {
-  border-left: 4px solid var(--secondary);
-  padding-left: 1rem;
-  font-style: italic;
-  color: color-mix(in srgb, var(--foreground) 82%, transparent);
+.prose-editorial ul {
+  list-style: disc;
 }
 
-.writing-content pre {
+.prose-editorial ol {
+  list-style: decimal;
+}
+
+.prose-editorial li + li {
+  margin-top: 0.4rem;
+}
+
+.prose-editorial li::marker {
+  color: var(--muted);
+}
+
+.prose-editorial blockquote {
+  border-left: 1px solid var(--line-strong);
+  padding-left: 1.25rem;
+  font-family: var(--font-serif);
+  font-size: 1.375em;
+  line-height: 1.4;
+  color: var(--ink);
+}
+
+.prose-editorial pre {
   overflow-x: auto;
-  border-radius: 1rem;
+  border: 1px solid var(--line);
   padding: 1rem 1.25rem;
-  background: var(--muted);
+  background: var(--paper-2);
+  font-size: 0.875rem;
+  line-height: 1.7;
 }
 
-.writing-content code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.95em;
+.prose-editorial code {
+  font-family: var(--font-mono);
+  font-size: 0.875em;
 }
 
-.writing-content :not(pre) > code {
-  border-radius: 0.4rem;
-  background: var(--muted);
-  padding: 0.15rem 0.35rem;
+.prose-editorial :not(pre) > code {
+  background: var(--paper-2);
+  padding: 0.1rem 0.35rem;
 }
 
-.writing-content img {
+.prose-editorial img {
+  display: block;
   max-width: 100%;
-  border-radius: 1rem;
+  height: auto;
+  margin: 2.5rem auto;
+}
+
+.prose-editorial center {
+  display: block;
+}
+
+.prose-editorial hr {
+  margin: 3rem 0;
+  border: 0;
+  border-top: 1px solid var(--line);
 }

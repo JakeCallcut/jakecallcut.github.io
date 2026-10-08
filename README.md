@@ -11,8 +11,13 @@ Live: https://jakecallcut.dev
 This repository contains a minimal, fast personal portfolio built with React, TypeScript, Vite and Tailwind CSS.
 
 ## Branches
-- `gh-pages` — production branch that hosts the live site (current branch).
-- `main` — primary development branch.
+- `main` — primary development branch. Pushing here builds and deploys the site.
+- `gh-pages` — build output served by GitHub Pages (written by the deploy workflow).
+
+## Editing content
+- Hero, projects, experience, education, skills and contact details live in `src/data/content.json`.
+- Writing posts are markdown files in `src/content/writing/` with `title`, `date` and `description` frontmatter. Add new posts to `public/sitemap.xml` too.
+- The hero artwork is `public/images/winged-victory-light.svg` / `-dark.svg`, swapped with the theme.
 
 ## Screenshots
 

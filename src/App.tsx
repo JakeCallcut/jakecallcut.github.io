@@ -1,38 +1,42 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { MotionConfig } from 'framer-motion';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollManager from './components/ScrollManager';
 import Home from './routes/Home';
-import Projects from './routes/Projects';
-import Experience from './routes/Experience';
-import About from './routes/About';
 import Writing from './routes/Writing';
 import WritingPost from './routes/WritingPost';
-import Contact from './routes/Contact';
 import NotFound from './routes/NotFound';
-import './styles/globals.css';
+
+// The site used to have a page per section; keep those URLs working.
+const LEGACY_SECTION_ROUTES = [
+  { path: '/projects', hash: '#work' },
+  { path: '/experience', hash: '#experience' },
+  { path: '/about', hash: '#about' },
+  { path: '/contact', hash: '#contact' },
+];
 
 function App() {
   return (
     <BrowserRouter>
-  <div className="flex flex-col min-h-screen font-sans bg-background text-foreground">
-        <Header />
-        <main className="flex-1 container mx-auto px-4 py-8">
-          <AnimatePresence mode="wait">
+      <MotionConfig reducedMotion="user">
+        <ScrollManager />
+        <div className="flex min-h-screen flex-col bg-paper font-sans text-ink">
+          <Header />
+          <main id="main" className="flex-1">
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/experience" element={<Experience />} />
-              <Route path="/about" element={<About />} />
               <Route path="/writing" element={<Writing />} />
               <Route path="/writing/:slug" element={<WritingPost />} />
-              <Route path="/contact" element={<Contact />} />
+              {LEGACY_SECTION_ROUTES.map(({ path, hash }) => (
+                <Route key={path} path={path} element={<Navigate to={{ pathname: '/', hash }} replace />} />
+              ))}
               <Route path="*" element={<NotFound />} />
             </Routes>
-          </AnimatePresence>
-        </main>
-        <Footer />
-      </div>
+          </main>
+          <Footer />
+        </div>
+      </MotionConfig>
     </BrowserRouter>
   );
 }
