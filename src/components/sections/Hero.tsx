@@ -20,11 +20,9 @@ export default function Hero() {
     <section ref={ref} id="top" aria-label="Introduction" className="relative overflow-hidden pt-16">
       <div className="frame relative flex flex-col lg:min-h-[calc(100svh-4rem)]">
         {/* Masthead */}
-        <div className="label order-0 grid grid-cols-2 gap-x-6 gap-y-1 border-b border-line py-3 text-muted md:grid-cols-4 lg:grid-cols-12">
-          <p className="lg:col-span-3">{hero.title}</p>
-          <p className="text-right md:text-left lg:col-span-3">{hero.location}</p>
-          <p className="hidden md:block lg:col-span-3">55.95° N, 3.19° W</p>
-          <p className="hidden text-right md:block lg:col-span-3">Portfolio — {new Date().getFullYear()}</p>
+        <div className="label order-0 flex items-center justify-between gap-6 border-b border-line py-3 text-muted">
+          <p>{hero.location}</p>
+          <LocalTime />
         </div>
 
         {/* Winged Victory */}
@@ -55,7 +53,6 @@ export default function Hero() {
             transition={{ duration: 1, delay: 0.9, ease }}
             className="lg:col-span-3"
           >
-            <p className="label mb-3 text-muted">(00) Index</p>
             <p className="max-w-[24ch] text-[22px] font-light leading-[1.25] tracking-tight lg:text-[26px]">
               {hero.tagline}.
             </p>
@@ -78,16 +75,6 @@ export default function Hero() {
               </a>
             </div>
           </motion.div>
-        </div>
-
-        {/* Foot of hero */}
-        <div className="label relative z-10 order-4 mt-12 flex items-center justify-between border-t border-line py-3 text-muted lg:mt-6">
-          <Link to={{ pathname: '/', hash: '#work' }} className="flex items-center gap-2 transition-colors hover:text-ink">
-            <span aria-hidden="true" className="inline-block animate-bounce">↓</span> Scroll to explore
-          </Link>
-          <p>
-            Edinburgh <LocalTime />
-          </p>
         </div>
       </div>
     </section>
