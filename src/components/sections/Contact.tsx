@@ -1,26 +1,49 @@
-import type { FormEvent } from 'react';
+import { useEffect, useState, type ComponentType } from 'react';
 import SectionHeader from '../SectionHeader';
 import Reveal from '../Reveal';
+import { GitHubIcon, KaggleIcon, LinkedInIcon } from '../BrandIcons';
 import { CV_PATH } from '../../lib/sections';
 import content from '../../data/content.json';
 
 const { contact, social } = content;
 
-const fieldClass =
-  'peer w-full border-0 border-b border-line bg-transparent px-0 pb-3 pt-2 text-[17px] text-ink placeholder:text-muted/70 transition-colors focus:border-ink focus:outline-none focus-visible:outline-none';
+// The profile handle is the last segment of each profile URL.
+function handleFrom(url: string) {
+  return new URL(url).pathname.split('/').filter(Boolean).pop() ?? url;
+}
 
-export default function Contact() {
-  const handleMailto = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const form = e.currentTarget;
-    const name = (form.elements.namedItem('name') as HTMLInputElement).value;
-    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
-    const subject = encodeURIComponent(`Portfolio Contact: ${name}`);
-    const body = encodeURIComponent(`From: ${name} <${email}>\n\n${message}`);
-    window.open(`mailto:${contact.email}?subject=${subject}&body=${body}`);
+const PROFILES: { label: string; href: string; Icon: ComponentType<{ className?: string }> }[] = [
+  { label: 'GitHub', href: social.github, Icon: GitHubIcon },
+  { label: 'LinkedIn', href: social.linkedin, Icon: LinkedInIcon },
+  { label: 'Kaggle', href: social.kaggle, Icon: KaggleIcon },
+];
+
+function CopyEmailButton() {
+  const [copied, setCopied] = useState(false);
+
+  useEffect(() => {
+    if (!copied) return;
+    const timer = window.setTimeout(() => setCopied(false), 2000);
+    return () => window.clearTimeout(timer);
+  }, [copied]);
+
+  const copy = async () => {
+    try {
+      await navigator.clipboard.writeText(contact.email);
+      setCopied(true);
+    } catch {
+      window.location.href = `mailto:${contact.email}`;
+    }
   };
 
+  return (
+    <button type="button" onClick={copy} className="pill pill-solid cursor-pointer" aria-live="polite">
+      {copied ? 'Copied' : 'Copy email'}
+    </button>
+  );
+}
+
+export default function Contact() {
   return (
     <section id="contact" aria-labelledby="contact-title" className="frame scroll-mt-16 pt-32 md:pt-48">
       <SectionHeader
@@ -31,64 +54,60 @@ export default function Contact() {
       />
 
       <div className="mt-14 grid grid-cols-1 gap-x-6 lg:grid-cols-12">
-        <Reveal className="lg:col-span-9 lg:col-start-4">
-          <p className="label mb-3 text-muted">Email directly</p>
-          <a
-            href={`mailto:${contact.email}`}
-            className="link-draw inline-block font-serif text-[clamp(1.75rem,6.4vw,5.5rem)] leading-none tracking-[-0.02em]"
-          >
-            {contact.email}
-          </a>
-        </Reveal>
-      </div>
+        {/* Details: profiles, email and actions */}
+        <div className="lg:col-span-9 lg:col-start-4">
+          <Reveal>
+            <ul className="grid grid-cols-1 border-b border-line sm:grid-cols-3 sm:border-b-0">
+              {PROFILES.map(({ label, href, Icon }, i) => (
+                <li key={label} className={`border-t border-line sm:border-b ${i > 0 ? 'sm:border-l' : ''}`}>
+                  <a
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${label} — ${handleFrom(href)} (opens in a new tab)`}
+                    className="group flex h-full items-center gap-4 px-1 py-5 transition-colors duration-300 hover:bg-ink hover:text-paper sm:min-h-44 sm:flex-col sm:items-stretch sm:justify-between sm:p-5"
+                  >
+                    <span className="flex items-start justify-between">
+                      <Icon className="size-7 sm:size-8" />
+                      <span
+                        aria-hidden="true"
+                        className="hidden text-lg text-muted transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-paper sm:inline"
+                      >
+                        ↗
+                      </span>
+                    </span>
+                    <span className="flex flex-1 items-baseline justify-between gap-3 sm:flex-none sm:flex-col sm:gap-1">
+                      <span className="text-lg font-medium tracking-tight">{label}</span>
+                      <span className="font-mono text-xs text-muted transition-colors duration-300 group-hover:text-paper/70">
+                        {handleFrom(href)}
+                      </span>
+                    </span>
+                    <span aria-hidden="true" className="text-muted group-hover:text-paper sm:hidden">
+                      ↗
+                    </span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
 
-      <div className="mt-20 grid grid-cols-1 gap-x-6 gap-y-16 lg:grid-cols-12">
-        <Reveal className="lg:col-span-5 lg:col-start-4">
-          <p className="label mb-6 text-muted">Or send a message</p>
-          <form className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2" onSubmit={handleMailto}>
-            <label className="block">
-              <span className="label text-muted">Name</span>
-              <input name="name" type="text" required autoComplete="name" placeholder="Your name" className={fieldClass} />
-            </label>
-            <label className="block">
-              <span className="label text-muted">Email</span>
-              <input name="email" type="email" required autoComplete="email" placeholder="you@example.com" className={fieldClass} />
-            </label>
-            <label className="block sm:col-span-2">
-              <span className="label text-muted">Message</span>
-              <textarea name="message" required rows={4} placeholder="What are you working on?" className={`${fieldClass} resize-none`} />
-            </label>
-            <div className="sm:col-span-2">
-              <button type="submit" className="pill pill-solid cursor-pointer">
-                Send message <span aria-hidden="true">→</span>
-              </button>
-            </div>
-          </form>
-        </Reveal>
+          <Reveal className="@container mt-16">
+            <p className="label mb-3 text-muted">Email</p>
+            <a
+              href={`mailto:${contact.email}`}
+              className="link-draw inline-block whitespace-nowrap font-serif text-[min(calc(100cqw/10.9),5.5rem)] leading-none tracking-[-0.02em]"
+            >
+              {contact.email}
+            </a>
+          </Reveal>
 
-        <Reveal className="lg:col-span-3 lg:col-start-10" delay={0.08}>
-          <p className="label mb-3 text-muted">Elsewhere</p>
-          <ul className="border-b border-line text-[15px]">
-            {[
-              { label: 'GitHub', href: social.github },
-              { label: 'LinkedIn', href: social.linkedin },
-              { label: 'Kaggle', href: social.kaggle },
-            ].map(link => (
-              <li key={link.label} className="border-t border-line">
-                <a href={link.href} target="_blank" rel="noopener noreferrer" className="group flex justify-between py-3">
-                  {link.label}
-                  <span aria-hidden="true" className="text-muted transition-colors group-hover:text-ink">↗</span>
-                </a>
-              </li>
-            ))}
-            <li className="border-t border-line">
-              <a href={CV_PATH} download="Jake_Callcut_CV.pdf" className="group flex justify-between py-3">
-                Download CV
-                <span aria-hidden="true" className="text-muted transition-colors group-hover:text-ink">↓</span>
-              </a>
-            </li>
-          </ul>
-        </Reveal>
+          <Reveal className="mt-8 flex flex-wrap gap-2">
+            <CopyEmailButton />
+            <a href={CV_PATH} download="Jake_Callcut_CV.pdf" className="pill pill-ghost">
+              Download CV <span aria-hidden="true">↓</span>
+            </a>
+          </Reveal>
+        </div>
       </div>
     </section>
   );

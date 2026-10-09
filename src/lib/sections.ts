@@ -12,4 +12,4 @@ export const SECTIONS: SiteSection[] = [
   { id: 'contact', label: 'Contact', index: '05' },
 ];
 
-export const CV_PATH = '/Jake_Callcut_CV.pdf';
+export const CV_PATH = '/Jake_Callcut.pdf';

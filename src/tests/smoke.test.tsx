@@ -30,6 +30,8 @@ beforeAll(() => {
   }
   Object.defineProperty(window, 'IntersectionObserver', { writable: true, value: MockIntersectionObserver });
   window.scrollTo = () => undefined;
+  // jsdom has no canvas; the hero statue falls back to its <img>, which these tests assert on.
+  HTMLCanvasElement.prototype.getContext = (() => null) as typeof HTMLCanvasElement.prototype.getContext;
 });
 
 beforeEach(() => {

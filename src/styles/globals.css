@@ -2,34 +2,38 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Theme tokens — monochrome paper & ink */
+/* Theme tokens — paper & navy ink */
 :root {
   --paper: #efefed;
-  --paper-2: #e5e5e2;
-  --ink: #0d0d0d;
-  --ink-2: #333331;
-  --muted: #666663;
-  --line: rgb(13 13 13 / 0.14);
-  --line-strong: rgb(13 13 13 / 0.85);
-  --invert-paper: #0d0d0d;
+  --paper-2: #e4e5e8;
+  --ink: #0f1d47;
+  --ink-2: #2e3a5e;
+  --muted: #5d6480;
+  --line: rgb(15 29 71 / 0.14);
+  --line-strong: rgb(15 29 71 / 0.85);
+  --statue: #34416c;
+  --tint: #0f1d47;
+  --invert-paper: #0f1d47;
   --invert-ink: #efefed;
-  --invert-muted: #8f8f8b;
+  --invert-muted: #9ba3c0;
   --invert-line: rgb(239 239 237 / 0.16);
   color-scheme: light;
 }
 
 .dark {
-  --paper: #0b0b0b;
-  --paper-2: #161615;
-  --ink: #ecece9;
-  --ink-2: #c4c4c0;
-  --muted: #8d8d89;
-  --line: rgb(236 236 233 / 0.14);
-  --line-strong: rgb(236 236 233 / 0.85);
-  --invert-paper: #141413;
-  --invert-ink: #ecece9;
-  --invert-muted: #8d8d89;
-  --invert-line: rgb(236 236 233 / 0.14);
+  --paper: #0a1430;
+  --paper-2: #111c3e;
+  --ink: #eceef3;
+  --ink-2: #c3c8d7;
+  --muted: #8e96b1;
+  --line: rgb(236 238 243 / 0.14);
+  --line-strong: rgb(236 238 243 / 0.85);
+  --statue: #ffffff;
+  --tint: #13224f;
+  --invert-paper: #0e1a3d;
+  --invert-ink: #eceef3;
+  --invert-muted: #8e96b1;
+  --invert-line: rgb(236 238 243 / 0.14);
   color-scheme: dark;
 }
 
@@ -49,7 +53,7 @@
 
 @theme {
   --font-sans: "Geist Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-  --font-serif: "Instrument Serif", ui-serif, Georgia, "Times New Roman", serif;
+  --font-serif: "Gloock", ui-serif, Georgia, "Times New Roman", serif;
   --font-mono: "Geist Mono Variable", ui-monospace, SFMono-Regular, Menlo, monospace;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -102,11 +106,11 @@
     }
   }
 
-  /* "Jake Callcut" set to span its container exactly (the set width is ~3.53em) */
+  /* "Jake Callcut" set to span its container exactly (in Gloock it sets ~5.21em wide) */
   .fit-name {
-    font-size: calc(100cqw / 3.56);
+    font-size: calc(100cqw / 5.24);
     line-height: 0.8;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.025em;
   }
 
   /* Small uppercase mono label */
@@ -169,10 +173,33 @@
   .dark .develop {
     filter: grayscale(1) contrast(1.05) brightness(0.8);
   }
+  /* Navy duotone over the greyscale image: shadows take the ink colour */
+  .tint {
+    position: absolute;
+    inset: 0;
+    background: var(--tint);
+    mix-blend-mode: lighten;
+    pointer-events: none;
+    transition: opacity 600ms ease;
+  }
+  /* ...and the mid-tones take a cast of it */
+  .tint-cast {
+    position: absolute;
+    inset: 0;
+    background: var(--tint);
+    mix-blend-mode: color;
+    opacity: 0.55;
+    pointer-events: none;
+    transition: opacity 600ms ease;
+  }
   @media (hover: hover) {
     .group:hover .develop {
       filter: grayscale(0) contrast(1);
       transform: scale(1.02);
+    }
+    .group:hover .tint,
+    .group:hover .tint-cast {
+      opacity: 0;
     }
   }
 }

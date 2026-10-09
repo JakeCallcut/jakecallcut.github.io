@@ -8,8 +8,8 @@ function List({ title, items }: { title: string; items: string[] }) {
   return (
     <div>
       <p className="label mb-3 text-muted">{title}</p>
-      <ul className="grid grid-cols-2 gap-x-6 border-b border-line">
-        {items.map(item => (
+      <ul className="grid grid-cols-2 gap-x-6">
+        {items.filter(Boolean).map(item => (
           <li key={item} className="border-t border-line py-2 text-[15px]">
             {item}
           </li>

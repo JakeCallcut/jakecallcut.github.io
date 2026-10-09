@@ -59,9 +59,16 @@ export default function Header() {
         }`}
       >
         <nav aria-label="Primary" className="frame flex h-16 items-center justify-between gap-6">
-          <Link to="/" className="flex items-baseline gap-2 whitespace-nowrap text-[15px] font-medium tracking-tight">
+          {/* On phones the role sits under the name so the theme and menu buttons keep their room */}
+          <Link
+            to="/"
+            className="flex flex-col whitespace-nowrap text-[15px] font-medium leading-tight tracking-tight sm:flex-row sm:items-baseline sm:gap-2"
+          >
             Jake Callcut
-            <span className="label hidden text-muted lg:inline">/ Software Engineer</span>
+            <span className="label mt-0.5 text-muted sm:mt-0 md:hidden lg:inline">
+              <span aria-hidden="true" className="hidden sm:inline">/ </span>
+              Software Engineer
+            </span>
           </Link>
 
           <ul className="hidden items-center gap-7 md:flex">
@@ -133,9 +140,9 @@ export default function Header() {
                   </motion.li>
                 ))}
               </ul>
-              <div className="grid grid-cols-2 gap-4 pt-10">
+              <div className="grid grid-cols-[auto_1fr] gap-x-12 gap-y-4 pt-10">
                 <div>
-                  <p className="label mb-2 text-muted">Elsewhere</p>
+                  <p className="label mb-2 text-muted">Links</p>
                   <ul className="space-y-1 text-[15px]">
                     <li><a href={content.social.github} target="_blank" rel="noopener noreferrer">GitHub</a></li>
                     <li><a href={content.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
@@ -144,7 +151,7 @@ export default function Header() {
                 </div>
                 <div>
                   <p className="label mb-2 text-muted">Email</p>
-                  <a href={`mailto:${content.contact.email}`} className="break-all text-[15px]">
+                  <a href={`mailto:${content.contact.email}`} className="text-[15px] [overflow-wrap:anywhere]">
                     {content.contact.email}
                   </a>
                 </div>

@@ -24,6 +24,8 @@ function FeaturedProject({ project, index }: { project: Project; index: number }
           decoding="async"
           className="develop size-full object-cover"
         />
+        <span aria-hidden="true" className="tint" />
+        <span aria-hidden="true" className="tint-cast" />
       </div>
       <div className="label mt-4 flex items-baseline justify-between gap-4 text-muted">
         <span>{pad(index + 1)}</span>
@@ -91,7 +93,7 @@ export default function Work() {
         index="01"
         label="Selected work"
         title={<span id="work-title">Selected Work</span>}
-        intro="Machine learning, data pipelines and the occasional piece of hardware — built end to end."
+        intro="Machine learning, reliable applications, AI pipelines, data analysis, and more..."
       />
 
       <div className="mt-14 grid grid-cols-1 gap-x-6 gap-y-16 md:grid-cols-2 lg:ml-[calc(25%+0.375rem)]">

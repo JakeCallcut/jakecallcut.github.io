@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SEO from '../lib/seo';
-import Statue from '../components/Statue';
+import HalftoneArt from '../components/HalftoneArt';
+import { WINGED_VICTORY } from '../lib/artworks';
 
 export default function NotFound() {
   return (
@@ -22,8 +23,8 @@ export default function NotFound() {
             <Link to={{ pathname: '/', hash: '#contact' }} className="pill pill-ghost">Contact</Link>
           </div>
         </section>
-        <div className="pointer-events-none mx-auto h-[50svh] max-h-[680px] min-h-[300px] lg:col-span-5 lg:mr-0 lg:h-[68svh]">
-          <Statue reveal className="h-full w-auto max-w-none opacity-80" />
+        <div className="relative h-[50svh] max-h-[680px] min-h-[300px] w-full lg:col-span-5 lg:h-[68svh]">
+          <HalftoneArt art={WINGED_VICTORY} className="absolute inset-0 size-full opacity-80" />
         </div>
       </div>
     </div>
