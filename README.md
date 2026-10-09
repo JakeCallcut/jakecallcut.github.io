@@ -76,7 +76,7 @@ Because GitHub Pages only serves static files, [`public/404.html`](public/404.ht
 ## Deployment
 
 - `main` is the development branch. Pushing to it runs the [deploy workflow](.github/workflows/deploy.yml), which builds the site and publishes `dist/` to `gh-pages`.
-- `gh-pages` holds the build output served by GitHub Pages at the custom domain in `CNAME`.
+- `gh-pages` holds the build output served by GitHub Pages at the custom domain in `public/CNAME`. It has to live in `public/` so it is copied into every build; the deploy replaces the whole branch, so a `CNAME` anywhere else gets deleted and the custom domain is lost.
 
 ## Mobile
 
