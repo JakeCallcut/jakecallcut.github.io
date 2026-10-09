@@ -1,34 +1,32 @@
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import SEO from '../lib/seo';
+import HalftoneArt from '../components/HalftoneArt';
+import { WINGED_VICTORY } from '../lib/artworks';
 
 export default function NotFound() {
   return (
-    <motion.section className="mx-auto max-w-5xl" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+    <div className="frame pt-24 md:pt-28">
       <SEO title="Page not found" description="The page you requested could not be found." canonical="https://jakecallcut.dev/" />
 
-      <div className="rounded-3xl border border-border bg-card p-8 shadow-soft md:p-10">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-muted-foreground">404</p>
-        <h1 className="mt-4 text-4xl font-extrabold tracking-tight md:text-5xl">There was a problem.</h1>
-        <p className="mt-4 max-w-2xl text-lg leading-8 text-muted-foreground">
-          The page you asked for could not be found.
-        </p>
-
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center rounded-2xl bg-primary px-5 py-3 font-medium text-primary-foreground transition-colors hover:bg-primary/90"
-          >
-            Home
-          </Link>
-          <Link
-            to="/contact"
-            className="inline-flex items-center justify-center rounded-2xl border border-border bg-background px-5 py-3 font-medium text-foreground transition-colors hover:bg-muted"
-          >
-            Contact
-          </Link>
+      <div className="grid grid-cols-1 items-end gap-x-6 gap-y-10 border-t border-line-strong pt-4 lg:grid-cols-12">
+        <section aria-labelledby="not-found-title" className="lg:col-span-7">
+          <p className="label text-muted">(404) Page not found</p>
+          <p aria-hidden="true" className="mt-6 font-serif text-[clamp(7rem,26vw,22rem)] leading-[0.75] tracking-[-0.04em]">
+            404
+          </p>
+          <h1 id="not-found-title" className="mt-8 font-serif text-4xl leading-tight tracking-[-0.01em] md:text-5xl">
+            There was a problem.
+          </h1>
+          <p className="mt-4 max-w-md text-[17px] leading-relaxed text-ink-2">The page you asked for could not be found.</p>
+          <div className="mt-8 flex flex-wrap gap-2">
+            <Link to="/" className="pill pill-solid">Home</Link>
+            <Link to={{ pathname: '/', hash: '#contact' }} className="pill pill-ghost">Contact</Link>
+          </div>
+        </section>
+        <div className="relative h-[50svh] max-h-[680px] min-h-[300px] w-full lg:col-span-5 lg:h-[68svh]">
+          <HalftoneArt art={WINGED_VICTORY} className="absolute inset-0 size-full opacity-80" />
         </div>
       </div>
-    </motion.section>
+    </div>
   );
 }

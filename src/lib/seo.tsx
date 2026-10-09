@@ -1,14 +1,12 @@
 import { useEffect } from 'react';
-
-const SITE_TITLE = 'Jake Callcut - Software Engineer';
-const SITE_URL = 'https://jakecallcut.dev';
-const DEFAULT_IMAGE = '/og-image.png';
+import { DEFAULT_IMAGE, SITE_TITLE, SITE_URL, type JsonLd } from './structuredData';
 
 interface SEOProps {
   title?: string;
   description?: string;
   canonical?: string;
-  jsonLD?: any | any[]; // structured data to inject
+  type?: 'website' | 'article';
+  jsonLD?: JsonLd | JsonLd[];
 }
 
 function upsertMeta(name: string, attr: 'name' | 'property', content: string) {
@@ -22,7 +20,7 @@ function upsertMeta(name: string, attr: 'name' | 'property', content: string) {
   el.setAttribute('content', content);
 }
 
-export default function SEO({ title, description, canonical, jsonLD }: SEOProps) {
+export default function SEO({ title, description, canonical, type = 'website', jsonLD }: SEOProps) {
   useEffect(() => {
     const fullTitle = title ? `${title} | ${SITE_TITLE}` : SITE_TITLE;
     document.title = fullTitle;
@@ -44,7 +42,7 @@ export default function SEO({ title, description, canonical, jsonLD }: SEOProps)
     upsertMeta('og:image', 'property', DEFAULT_IMAGE);
     upsertMeta('og:title', 'property', fullTitle);
     upsertMeta('og:description', 'property', description ?? '');
-    upsertMeta('og:type', 'property', 'website');
+    upsertMeta('og:type', 'property', type);
     upsertMeta('og:url', 'property', canonical ?? SITE_URL);
 
     upsertMeta('twitter:card', 'name', 'summary_large_image');
@@ -69,28 +67,7 @@ export default function SEO({ title, description, canonical, jsonLD }: SEOProps)
       // cleanup JSON-LD scripts
       for (const s of addedScripts) s.remove();
     };
-  }, [title, description, canonical, jsonLD]);
+  }, [title, description, canonical, type, jsonLD]);
 
   return null;
-}
-
-export function personJSONLD(data: { name: string; url?: string; email?: string; sameAs?: string[] }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
-    name: data.name,
-    url: data.url ?? SITE_URL,
-    email: data.email,
-    sameAs: data.sameAs,
-  };
-}
-
-export function websiteJSONLD(data: { name: string; url?: string; description?: string }) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'WebSite',
-    name: data.name,
-    url: data.url ?? SITE_URL,
-    description: data.description,
-  };
 }

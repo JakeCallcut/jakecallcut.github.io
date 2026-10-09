@@ -2,10 +2,10 @@
   "hero": {
     "name": "Jake Callcut",
     "title": "Software Engineer",
-    "tagline": "Building reliable, data-driven systems with equal parts precision and purpose",
+    "tagline": "Software engineer focused on AI, machine learning and data engineering",
     "cta": "Get in touch",
     "location": "Edinburgh, Scotland",
-    "portrait": "/portrait.jpg"
+    "now": "Currently building at STMicroelectronics, based in Edinburgh."
   },
   "social": {
     "github": "https://github.com/JakeCallcut",
@@ -15,9 +15,9 @@
     "website": "https://jakecallcut.dev"
   },
   "about": {
-    "bio": "I'm a software Engineer with a focus on building reliable, secure, and data-driven systems. My experience spans data analysis, machine learning, and embedded software. I am passionate about creating thoughtful software solutions, with efficient design and attention to detail. My time working with startups taught me how to move quickly, solve problems creatively, and take ownership from concept to deployment.",
-    "skills": ["Python", "TypeScript", "Dart", "Flutter", "Rust", "PyTorch", "scikit-learn", "HuggingFace", "SQL","Pipelines", "NLP"],
-    "toolbox": ["VS Code", "PyCharm", "Git", "Docker", "JSON", "APIs", "XCode"]
+    "bio": "I'm a software engineer in the final year of an MEng at Heriot-Watt University, with a focus on AI and machine learning. I have built and shipped products at two early-stage startups, including a fault-tolerant control system that runs across multiple machines and a mobile app taken from first design to deployment. At STMicroelectronics I now work on generative AI, fine-tuning diffusion models to produce synthetic wafer imagery for defect detection. I care most about software that keeps working when something fails and about models that are evaluated rigorously.",
+    "skills": ["Python", "TypeScript", "Rust", "Flutter", "PyTorch", "Hugging Face", "Diffusion Models", "Pandas"],
+    "toolbox": ["Git", "GitHub", "Docker", "Azure", "Kubernetes", "Jupyter", "VS Code", "AI-Assisted Development"]
   },
   "experience": [
     {
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "company": "Squircle",
+      "company": "Diamond",
       "role": "Software Engineer",
       "period": "Jul 2025 — May 2026",
       "location": "Glasgow, Scotland",
@@ -175,6 +175,6 @@
   ],
   "contact": {
     "email": "contact@jakecallcut.dev",
-    "note": "I'm always open to discussing new opportunities, collaborations, or side projects. Drop me a message and let's chat!"
+    "note": "I'm always open to discussing new opportunities, collaborations, or side projects. Please do drop me a message."
   }
 }
