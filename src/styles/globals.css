@@ -113,6 +113,15 @@
     letter-spacing: -0.025em;
   }
 
+  /* Static Winged Victory for the footer: the dark-background halftone, filled with the footer ink */
+  .footer-statue {
+    aspect-ratio: 800 / 1230;
+    background: var(--invert-ink);
+    opacity: 0.85;
+    -webkit-mask: url("/images/winged-victory-dark.svg") left bottom / contain no-repeat;
+    mask: url("/images/winged-victory-dark.svg") left bottom / contain no-repeat;
+  }
+
   /* Small uppercase mono label */
   .label {
     font-family: var(--font-mono);

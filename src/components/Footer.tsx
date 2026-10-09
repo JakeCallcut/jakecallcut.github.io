@@ -10,6 +10,11 @@ export default function Footer() {
     <footer className="mt-32 overflow-hidden border-t border-invert-line bg-invert-paper text-invert-ink md:mt-48">
       <div className="frame pt-12 md:pt-16">
         <div className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-12">
+          {/* A small, still Winged Victory, echoing the hero */}
+          <div className="relative col-span-2 md:col-span-3 md:self-stretch">
+            <div aria-hidden="true" className="footer-statue h-36 md:absolute md:inset-y-0 md:left-0 md:h-auto" />
+          </div>
+
           <div className="md:col-span-3">
             <p className="label text-invert-muted">Index</p>
             <ul className="mt-3 space-y-1.5 text-[15px]">
