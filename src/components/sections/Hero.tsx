@@ -1,7 +1,7 @@
-import { useRef } from 'react';
-import { motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
+import { useRef, useState } from 'react';
+import { AnimatePresence, motion, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import HalftoneArt from '../HalftoneArt';
-import { WINGED_VICTORY } from '../../lib/artworks';
+import { STATUES, randomOtherIndex } from '../../lib/artworks';
 import LocalTime from '../LocalTime';
 import { GitHubIcon, LinkedInIcon, MailIcon } from '../BrandIcons';
 import content from '../../data/content.json';
@@ -15,11 +15,17 @@ const LINKS = [
 ];
 const ease = [0.16, 1, 0.3, 1] as const;
 
+// Keep dates like "c. 190 BC" on one line.
+const keepDatesTogether = (text: string) => text.replace(/c\. /g, 'c.\u00a0').replace(/ (BC|AD)\b/g, '\u00a0$1');
+
 export default function Hero() {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end start'] });
   const statueY = useTransform(scrollYProgress, [0, 1], ['0%', reduceMotion ? '0%' : '8%']);
+  // Start on the Winged Victory; clicking morphs to a different statue at random.
+  const [statueIndex, setStatueIndex] = useState(0);
+  const statue = STATUES[statueIndex];
 
   return (
     <section ref={ref} id="top" aria-label="Introduction" className="relative overflow-hidden pt-16">
@@ -31,21 +37,39 @@ export default function Hero() {
         </div>
 
         <div className="grid flex-1 grid-cols-1 gap-x-6 lg:grid-cols-12">
-          {/* Winged Victory — owns the left of the hero */}
+          {/* A statue owns the left of the hero */}
           <motion.figure
             style={{ y: statueY }}
             className="mt-6 flex h-[min(66svh,640px)] min-h-[400px] flex-col lg:col-span-5 lg:my-6 lg:h-auto lg:min-h-0"
           >
             <div className="relative min-h-0 flex-1">
-              <HalftoneArt art={WINGED_VICTORY} className="absolute inset-0 size-full" />
+              <HalftoneArt
+                art={statue}
+                prefetch={STATUES}
+                onActivate={() => setStatueIndex(index => randomOtherIndex(STATUES.length, index))}
+                activateLabel={`${statue.title}. Show another statue`}
+                className="absolute inset-0 size-full"
+              />
             </div>
             <motion.figcaption
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 1.6 }}
+              aria-live="polite"
               className="mt-1 text-balance text-[13px] leading-snug text-muted"
             >
-              <em>Winged Victory of Samothrace</em>, c.&nbsp;190&nbsp;BC. Parian marble. Louvre, Paris.
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.span
+                  key={statue.id}
+                  className="block"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1, transition: { duration: 0.5, delay: 0.6 } }}
+                  exit={{ opacity: 0, transition: { duration: 0.25 } }}
+                >
+                  <em>{statue.title}</em>
+                  {keepDatesTogether(statue.details)}
+                </motion.span>
+              </AnimatePresence>
             </motion.figcaption>
           </motion.figure>
 

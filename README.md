@@ -7,7 +7,7 @@ Live: https://jakecallcut.dev
 ![Deployment](https://img.shields.io/badge/deploy-GitHub%20Pages-blueviolet)
 ![Tests](https://img.shields.io/badge/tests-vitest-yellow)
 
-A one-page, editorial portfolio built with React, TypeScript, Vite and Tailwind CSS. Paper and navy palette, Gloock headlines, and an interactive halftone of the Winged Victory of Samothrace whose dots part around the cursor.
+A one-page, editorial portfolio built with React, TypeScript, Vite and Tailwind CSS. Paper and navy palette, Gloock headlines, and an interactive halftone gallery of classical statues: the dots part around the cursor, and clicking the statue morphs it into another.
 
 ![Desktop screenshot](scs/desktop_sc.png)
 
@@ -38,12 +38,14 @@ npm run preview # serve the production build locally
 
 ## Halftone artwork
 
-[`HalftoneArt`](src/components/HalftoneArt.tsx) renders a halftone SVG as particles on a canvas: dots drift away from the cursor and spring back, a click or tap sends a ripple through them, and the artwork sweeps in from the bottom the first time it scrolls into view. With reduced motion it is drawn still, and without canvas support it falls back to the plain SVG.
+[`HalftoneArt`](src/components/HalftoneArt.tsx) renders a halftone SVG as particles on a canvas: dots drift away from the cursor and spring back, a click or tap sends a small ripple through them, and the artwork sweeps in from the bottom the first time it scrolls into view. When the artwork changes (or the theme switches), the dots morph into the new piece: both dot sets are ordered along a Hilbert curve and paired off, surplus dots fade out and missing ones split off, and the move sweeps upward from the base. With reduced motion it swaps without animating, and without canvas support it falls back to the plain SVG.
+
+The hero opens on the Winged Victory and cycles through the statues in `STATUES` (in [`src/lib/artworks.ts`](src/lib/artworks.ts)): clicking the statue, or pressing Enter on it, morphs to a different one at random and updates the caption.
 
 To add a piece:
 
 1. Put light and dark versions in `public/images/`. Each SVG should be a few `<path>`s (one per `fill-opacity`) made of square (`M x y h s v s h-s z`) or round (`M x y a r r 0 1 0 2r 0 …`) dots.
-2. Add an entry to [`src/lib/artworks.ts`](src/lib/artworks.ts) with both sources and alt text.
+2. Add an entry to [`src/lib/artworks.ts`](src/lib/artworks.ts) with both sources, alt text and its caption (`title` is set in italics, followed by `details`). Add it to `STATUES` to include it in the hero gallery.
 3. Render it inside a sized box: `<HalftoneArt art={MY_ART} align="left" className="absolute inset-0 size-full" />`. `align` picks the bottom corner it anchors to.
 
 The astrolabe of ʿUmar ibn Yusuf is already defined there, ready to use.

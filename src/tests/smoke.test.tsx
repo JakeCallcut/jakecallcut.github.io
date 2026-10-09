@@ -3,6 +3,7 @@ import { cleanup, fireEvent, render, screen, waitFor, within } from '@testing-li
 import '@testing-library/jest-dom/vitest';
 import { afterEach, beforeAll, beforeEach, describe, expect, it } from 'vitest';
 import App from '../App';
+import { STATUES } from '../lib/artworks';
 import { restoreGithubPagesRedirect } from '../lib/githubPagesRedirect';
 
 beforeAll(() => {
@@ -63,7 +64,8 @@ describe('Portfolio Smoke Test', () => {
   it('renders the one-page home with the hero and every section', () => {
     const { container } = render(<App />);
     expect(screen.getByRole('heading', { level: 1, name: 'Jake Callcut' })).toBeInTheDocument();
-    expect(screen.getByAltText(/Winged Victory of Samothrace/i)).toHaveAttribute('src', '/images/winged-victory-light.svg');
+    const statue = screen.getByRole('button', { name: /Show another statue/i });
+    expect(STATUES.map(s => s.sources.light)).toContain(statue.querySelector('img')?.getAttribute('src'));
     for (const id of ['work', 'experience', 'about', 'writing', 'contact']) {
       expect(container.querySelector(`section#${id}`)).not.toBeNull();
     }
@@ -75,9 +77,26 @@ describe('Portfolio Smoke Test', () => {
     render(<App />);
     fireEvent.click(screen.getByRole('button', { name: /Switch to dark theme/i }));
     expect(document.documentElement).toHaveClass('dark');
-    expect(screen.getByAltText(/Winged Victory of Samothrace/i)).toHaveAttribute('src', '/images/winged-victory-dark.svg');
+    const statueImage = screen.getByRole('button', { name: /Show another statue/i }).querySelector('img');
+    expect(statueImage?.getAttribute('src')).toMatch(/-dark\.svg$/);
     fireEvent.click(screen.getByRole('button', { name: /Switch to light theme/i }));
     expect(document.documentElement).not.toHaveClass('dark');
+  });
+
+  it('switches the hero statue and its caption when the statue is clicked', async () => {
+    render(<App />);
+    const button = screen.getByRole('button', { name: /Show another statue/i });
+    const titleOf = (label: string | null) => STATUES.find(s => label?.startsWith(s.title))!;
+    const first = titleOf(button.getAttribute('aria-label'));
+    const caption = button.closest('figure')!.querySelector('figcaption')!;
+    expect(within(caption).getByText(first.title)).toBeInTheDocument();
+
+    fireEvent.click(button);
+
+    await waitFor(() => expect(titleOf(button.getAttribute('aria-label')).id).not.toBe(first.id));
+    const next = titleOf(button.getAttribute('aria-label'));
+    expect(button.querySelector('img')).toHaveAttribute('src', next.sources.light);
+    await waitFor(() => expect(within(caption).getByText(next.title)).toBeInTheDocument());
   });
 
   it('renders the writing index route', () => {
