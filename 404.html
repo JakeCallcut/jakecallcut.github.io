@@ -5,21 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#efefed" />
     <title>Page not found</title>
+    <script>
+      // Match the site's theme before first paint.
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var dark = stored ? stored === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.classList.add(dark ? 'dark' : 'light');
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', dark ? '#0a1430' : '#efefed');
+        } catch (e) {}
+      })();
+    </script>
     <style>
       :root {
-        color-scheme: light dark;
+        color-scheme: light;
         --paper: #efefed;
-        --ink: #0d0d0d;
-        --muted: #666663;
-        --line: rgba(13, 13, 13, 0.85);
+        --ink: #0f1d47;
+        --muted: #5d6480;
+        --line: rgb(15 29 71 / 0.85);
+      }
+
+      /* Dark follows the saved theme, or the system setting when none is saved (or without JS) */
+      :root.dark {
+        color-scheme: dark;
+        --paper: #0a1430;
+        --ink: #eceef3;
+        --muted: #8e96b1;
+        --line: rgb(236 238 243 / 0.85);
       }
 
       @media (prefers-color-scheme: dark) {
-        :root {
-          --paper: #0b0b0b;
-          --ink: #ecece9;
-          --muted: #8d8d89;
-          --line: rgba(236, 236, 233, 0.85);
+        :root:not(.light) {
+          color-scheme: dark;
+          --paper: #0a1430;
+          --ink: #eceef3;
+          --muted: #8e96b1;
+          --line: rgb(236 238 243 / 0.85);
         }
       }
 
