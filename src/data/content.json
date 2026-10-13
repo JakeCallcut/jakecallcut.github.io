@@ -25,7 +25,7 @@
       "role": "AI & Machine Learning Engineer Intern",
       "period": "May 2026 — Present",
       "location": "Edinburgh, Scotland",
-      "image": "/experience-three.png",
+      "logo": "/stm.png",
       "bullets": [
         "Independently researching and implementing state-of-the-art generative AI methods for synthetic data augmentation within the Data and Knowledge Engineering Team, improving defect detection accuracy on semiconductor wafers by 8%.",
         "Applying diffusion models with LoRA fine-tuning on proprietary datasets to generate high-fidelity synthetic wafer imagery, increasing available training data by 20%.",
@@ -37,7 +37,7 @@
       "role": "Fund Analyst",
       "period": "Oct 2026 — Present",
       "location": "Edinburgh, Scotland",
-      "image": "/experience-four.png",
+      "logo": "/hwuis.png",
       "bullets": [
         "Working in the Technology & Professional Services Team"
       ]
@@ -47,7 +47,7 @@
       "role": "Software Engineer",
       "period": "Jul 2025 — May 2026",
       "location": "Glasgow, Scotland",
-      "image": "/experience-one.png",
+      "logo": "/diamond.png",
       "bullets": [
         "Independently designed and developed the company's consumer mobile app and companion business platform, delivering end-to-end functionality from UI/UX to deployment.",
         "Contributed to investor pitches and funding applications, helping the startup secure grants and investment by showcasing technical feasibility and product potential."
@@ -58,7 +58,7 @@
       "role": "Software Engineer",
       "period": "Aug 2024 — Nov 2025",
       "location": "Edinburgh, Scotland",
-      "image": "/experience-two.png",
+      "logo": "/gihealthcare.png",
       "bullets": [
         "Architected and implemented a multi-machine control system with a custom server–client design using Flutter, TypeScript, and Socket.IO, ensuring a high fault tolerance.",
         "Attended stakeholder product demonstrations, engaging with end-users to gather requirements, observe operational needs, and provide feedback to improve system reliability and usability."
@@ -69,17 +69,31 @@
       "role": "UI/UX Intern",
       "period": "Jun 2024 — Aug 2024",
       "location": "Edinburgh, Scotland",
-      "image": "/experience-two.png",
+      "logo": "/gihealthcare.png",
       "bullets": [
         "Designed the front-end interface for a multi-machine control system, from low-fidelity wireframes to developer-ready handoff using Figma. Helping take the company's new product from TRL 3 to TRL 5.",
         "Liased with engineers and military personnel to ensure the interface met user needs and operational requirements."
       ]
     }
   ],
+  "hackathons": [
+    {
+      "name": "HackTheBurgh XIII",
+      "date": "November 2026",
+      "status": "Selected participant",
+      "logo": "/htb.png"
+    },
+    {
+      "name": "JPMorganChase: Code for Good",
+      "date": "October 2026",
+      "status": "Selected participant",
+      "logo": "/jpmccfg.png"
+    }
+  ],
   "education": [
     {
       "University": "Heriot-Watt University",
-      "Programme": "MEng Software Engineering",
+      "Programme": "MEng Software Engineering", 
       "grade": "On track for First Class Honours",
       "period": "2022 — 2027",
       "image": "/education-one.png",

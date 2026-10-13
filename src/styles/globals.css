@@ -211,6 +211,16 @@
       opacity: 0;
     }
   }
+  /* Without hover, develop while scrolled into the middle of the screen */
+  @media (hover: none) {
+    [data-in-view] .develop {
+      filter: grayscale(0) contrast(1);
+    }
+    [data-in-view] .tint,
+    [data-in-view] .tint-cast {
+      opacity: 0;
+    }
+  }
 }
 
 /* Winged Victory reveal: a print-head sweep from the plinth upward */

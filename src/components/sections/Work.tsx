@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+import { useInView } from 'framer-motion';
 import SectionHeader from '../SectionHeader';
 import Reveal from '../Reveal';
 import content from '../../data/content.json';
@@ -14,9 +16,16 @@ function pad(n: number) {
 
 function FeaturedProject({ project, index }: { project: Project; index: number }) {
   const source = project.links.source;
+  // Touch screens can't hover, so the image develops while it sits in the middle of the screen instead.
+  const imageRef = useRef<HTMLDivElement>(null);
+  const inView = useInView(imageRef, { margin: '-30% 0px -30% 0px' });
   const body = (
     <>
-      <div className="relative aspect-[16/10] overflow-hidden border border-line bg-paper-2">
+      <div
+        ref={imageRef}
+        data-in-view={inView || undefined}
+        className="relative aspect-[16/10] overflow-hidden border border-line bg-paper-2"
+      >
         <img
           src={project.image}
           alt=""
