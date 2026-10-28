@@ -78,6 +78,9 @@ export default function Experience() {
                     <span className="whitespace-nowrap text-ink-2">{event.date}</span> ·{' '}
                     <span className="whitespace-nowrap">{event.status}</span>
                   </p>
+                  {'description' in event && (
+                    <p className="mt-3 text-[15px] leading-relaxed text-ink-2">{event.description}</p>
+                  )}
                 </div>
               </div>
             </Reveal>

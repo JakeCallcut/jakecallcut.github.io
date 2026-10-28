@@ -86,7 +86,8 @@
     {
       "name": "JPMorganChase: Code for Good",
       "date": "October 2026",
-      "status": "Selected participant",
+      "status": "Participant",
+      "description": "Building for Glasgow Children's Hospital Charity, my team built an AI-powered platform that allows the charity to coordinate its volunteer drivers delivering services to families across Scotland.",
       "logo": "/jpmccfg.png"
     }
   ],
